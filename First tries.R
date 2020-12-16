@@ -14,6 +14,10 @@ rm(dataset) ## dataset zu df umbenannt
 Phosphate <- df$Verbrauch_PhosphatLW_t ## Nimmt Phos. Werte aus df und erstellt einzelne Value Liste
 summary(Phosphate) ## erster Blick auf die Daten, Min., Max., Mean...
 
+Phos_LW %>% 
+  select(Jahr, Phosphate_use) %>%
+  filter(Phosphate_use == "174" | Phosphate_use == "1055") ## Filter um sich Jahre für Min und Max anzeigen zu lassen (wahrscheinlich gäbe es auch eine elegantere Lösung)
+
 timeline_numeric <- as.numeric(as.character(df$Jahr)) ## neue Value Liste aus Jahreszahlen Spalte, mit Jahreszahlen als numerischer Wert statt Character (wichtig um später Limits in der Ansicht setzen zu können)
 Phos_LW <- tibble(timeline_numeric, Phosphate) ##Neuer Tibble aus den eben erstellten Values
 view(Phos_LW)
@@ -67,10 +71,42 @@ ggplot(Phos_LW.new, aes(x=Jahr, y=Perc_change, fill=factor(ifelse(Perc_change <0
        y = "Change in comparison to the previous year", 
        title = "Increase and decline of phospate fertilizer use in Germany 2000-2019")
 
+growth_rate_phos = Phos_LW %>% ## nochmal andere Methode (vllt etwas besser weil Tabelle mit numerischen Differenzen aussagekräftiger?
+  # first sort by year
+  arrange(Jahr) %>%
+  mutate(Diff_year = Jahr - lag(Jahr),  # Difference in time (just in case there are gaps)
+         Diff_growth = Phosphate_use - lag(Phosphate_use), # Difference in route between years
+         Rate_percent = (Diff_growth /Diff_year)/ lag(Phosphate_use) * 100) # growth rate in percent
+
+Average_growth_phos = mean(growth_rate_phos$Rate_percent, na.rm = TRUE)
+
+# if problems with filter::dplyr occur:
+## detach("package:dplyr")  # Unload dplyr
+## detach("package:stats")  # Unload stats
+## library(stats)           # reload stats
+## library(dplyr)           # then reload dplyr, reloading in this order will ensure that dplyr::filter is default
+
+Phos_LW %>% ## filter nach Phosphat-Werten von Beginn und Endpunkten
+  select(Jahr, Phosphate_use) %>%
+  filter(Jahr == "1985" | Jahr == "2019")
+
+label_percent(scale = 1)(((211 / 1055 * 100) - 100)) ## Prozentual Differenz zwischen Messwerten von 1985 und 2019
+
+
+Phos_LW %>% ## Filter für Werte von 2000 und 2019
+  select(Jahr, Phosphate_use) %>%
+  filter(Jahr == "2000" | Jahr == "2019")
+
+label_percent(accuracy = 0.01, scale = 1)(((211 / 351 * 100) - 100)) ## Prozentual Differenz zwischen Messwerten von 2000 und 2019
+
 ## Moving on with terrestrial eutrophication, also einfach nochmal die selben Schritte, aber diesmal mit %-Werten auf den Y-Achse
 
 Eutro_terr <- df$`Flächenanteil_%_eutro_terr`
 summary(Eutro_terr)
+
+Area_eutro_terr %>% 
+  select(Jahr, Percentage_of_area) %>%
+  filter(Percentage_of_area == "50" | Percentage_of_area == "79.03") ## Filter um sich Jahre für Min und Max anzeigen zu lassen (wahrscheinlich gäbe es auch eine elegantere Lösung)
 
 Area_eutro_terr <- tibble(timeline_numeric, Eutro_terr)
 view(Area_eutro_terr)
@@ -126,3 +162,11 @@ ggplot(Area_eutro_terr.new, aes(x=Jahr, y=Perc_change, fill=factor(ifelse(Perc_c
   labs(x = "Time (years)", 
        y = "Change in comparison to the previous year", 
        title = "Increase and decline of area exceeding critical eutrophication loads in Germany 2000-2016")
+
+Area_eutro_terr %>% ## Filter nach Beginn- und Endwert für Flächenanteil -> Vergleich Prozentuale Rückgang Phosphatdünger selber Zeitraum?
+  select(Jahr, Percentage_of_area) %>%
+  filter(Jahr == "2000" | Jahr == "2015")
+
+label_percent(accuracy = 0.01, scale = 1)(((68 / 79 * 100) - 100)) ## Prozentual Differenz zwischen Flächenanteil von 2000 und 2015
+
+label_percent(accuracy = 0.01, suffix = " %", scale = 1)(((50 / 68 * 100) - 100)) ## Benötigter prozentualer Rückgang des eutrophierten Flächenanteils zum Erreichen des 2030 Ziels 
