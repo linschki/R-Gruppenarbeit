@@ -1,0 +1,180 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+## **Introduction**
+
+This report deals with the impacts of phosphate and nitrogen fertilizers used in agriculture and their effect on the terrestrial and hydrological ecosystem. Increased inputs of nitrogen and phosphate cause eutrophication in water bodies, both marine and freshwater. The term eutrophication describes a process in which an ecosystem is brought out of balance by an oversupply of nutrients. This triggers an increased growth of single-celled algae in the water bodies, which are mainly found in the upper, light-flooded water layers. As a result of the increasing algae biomass, fewer light can penetrate the surface layers and reach other plants and living organisms further down. Additionally, algae have relatively short life-cycles meaning that soon after dead algae biomass accumulates and sinks to the ground. The subsequent decomposition of the dead algae consumes a lot of oxygen making the conditions for the other organisms even more hostile. Starved of light and oxygen, more and more species start to die, depending on their tolerance to the changing habitat conditions. Ultimately this process can lead to a significant biodiversity loss in the given ecosystem. While in a healthy ecosystem, the nutrient supply would regulate the amount of algae present, eutrophication thus describes a scenario in which an excessive nutrient input leads to a single cell algal bloom, which causes the loss of biodiversity and a significant oxygen deficiency in water bodies. (Federal Environment Agency. 2020)
+
+The input of these excess nutrients usually stems from agriculture, communal wastewater treatment facilities and the industrial sector. However, the input from agriculture represents the largest share. Agriculture uses nitrogen fertilizers to fertilize its lands, which are responsible for 90% of the nitrogen introduced to groundwater (Taube et al. 2020. P. 7). Agriculture is also the leading cause for phosphate input into water bodies. Other areas, such as municipal wastewater treatment plants, were able to reduce their phosphate input over the past decades. (Ibid.)
+
+The consequences of eutrophication make it clear the immediate action against water pollution is required, a task which is supervised by the Water Protection Directive of the European Union. However, it is the federal government which has the tools for direct action and is thus responsible to combat water pollution on a national level, including ensuring a reduction of phosphorus and nitrogen input to protect water ecosystems. 
+
+Since eutrophication of water bodies is such an important topic the state of different water bodies in Germany is constantly being observed and data on the trends over the past years is easily available. Additionally, data on the use of nitrogen and phosphate fertilizers in the german agricultural sector can also be accessed. Since the links between fertilizer use in agriculture and excessive nutrient input into water ecosystems is well documented and understood in the scientific literature, the goal of this report is to see if such correlations can also be observed when looking just at already available datasets. The analysis is thus structured into two steps, in the first step three different datasets on fertilizer use and water eutrophication are considered separately and the trends of their individual developments are visualized. In the second step the datasets are combined and compared with one another. Since two of the datasets also include a target value which is to be reached by 2030, the analysis also takes a look at the overall development over the past years and compares this to what is required in order to reach the 2030 target. Thus, a conclusion can be made on whether or not the given target can be reached if the trends of the past decades are continued at the same rate.
+
+## **About the Data**
+
+Two datasets used in this analysis are taken from the website of the German Federal Environmental Agency (FEA). The third dataset is from Eurostat. The Federal Environmental Agency collects data on the environment in Germany, covering a wide range of topics from waste management to climate change. The Federal Environmental Agency collects the data, researches the interrelationships and enables forecasts to be made for the future. In addition, the FEA also provides an interface between the law and the implementation of laws. Accompanying laws into practice is thus another one of the office's responsibilities (Umweltbundesamt, 2018).
+
+Eurostat, as the statistical office of the European Union, is the source for the dataset on phosphate fertilizers and their use in Germany. The agency's mission is to provide high quality statistics and data on Europe in cooperation with national offices. (eurostat n.d.)
+
+The data used in this work mainly consider the environmental impacts of specific substances namely phosphate and nitrogen on the environment, specifically on hydrological systems, looking at the annual evolution over a period of time. The aim of the work is to put the different data in context and to provide a possible forecast for the year 2030. However, it should be noted that any forecast that is made here is only made in direct relation to the limited available data from the examined datasets, so that there can be no claim of completeness or accuracy of the forecast, since in a real-world setting many other factors are at play.
+
+In this work the following datasets are compared with each other: Sampling sites which exceed the requirement for positive status for total phosphorus in rivers, nitrogen surplus of the national farm-gate balance and an overview of the annual use of phosphate fertilizer in Germany. The datasets used show data from different points in time, therefore in the first step of the analysis the individual datasets are considered alone. Only in the second step of the analysis the data are merged and compared and there only from the common years.
+
+## **Hypothesis**
+
+## **The Analysis**
+
+Our data analysis technically started before we even imported our datasets into RStudio for the first time. As you can see in the *data_raw* folder, the original files include a lot of additional information and explanations on the data, which get in the way when importing them into RStudio directly. We therefore cleaned the datasets up a little in Excel to include just the needed values. The clean datasets, as well as a merged dataframe of all our datasets can be found in *data_clean*.
+
+### **Getting started with RMarkdown**
+
+We began by loading all our required R packages:
+
+```{r}
+    library(tidyverse)
+    library(scales)
+    library(stats)
+    library(dplyr)
+```
+
+And then importing the clean datasets from out folder:
+
+```{r}
+library(readxl)
+eutrophication_rivers <- read_excel("data_clean/eutrophierung_fluesse_gueteklassen.xlsx", 
+   col_types = c("text", "numeric", "numeric", 
+   "numeric", "numeric", "numeric"))
+
+phosphate_agri <- read_excel("data_clean/PhosphatLW_pro_Jahr.xlsx", 
+   col_types = c("text", "numeric"))
+
+nitrogen_agri <- read_excel("data_clean/Stickstoff_LW_kg_pro_hektar.xlsx", 
+   col_types = c("text", "numeric", "numeric"))
+```
+
+We then took a first look at the data we just imported:
+
+```{r}
+View(eutrophication_rivers)
+View(nitrogen_agri)
+View(phosphate_agri)
+```
+
+As you can see the three tables all differ in number of columns and in the time span they cover. To get a more organized starting point for our further data analysis. For this purpose we joined all three imported datasets into one overall dataframe. We used the year dates column of the **eutrophication_rivers** to join them by as a time scale is something all three datasets have in common and the eutrophication measurements have the most extensive time scale. We used the dplyr approach and left_join function to combine our datasets, in order to keep rows even if some of the datasets were missing values for a given year.
+
+```{r}
+df <- left_join(eutrophication_rivers, nitrogen_agri, by = "Jahr")
+df <- left_join(df, phosphate_agri, by = "Jahr")
+View(df)
+```
+
+This concluded our preparation and we continued with the data analysis. To avoid everyone having to merge their dataset themselves to get the big dataframe for the analysis, a Excel version of the full dataframe can also be found in *data_clean*.
+
+### **Step 1: Phosphate, Nitrogen, and Eutrophication, respectively**
+
+Step one of our data analysis looks at the individual types of data i.e. how phosphate and nitrogen use in agriculture developed over time, as well as how river eutrophication changed over time.
+
+#### Phosphate
+
+The Phosphate column shows the annual use of phosphate as an agricultural fertilizers in tonnes per year with datapoints for the years 1985, 1990, 1995, and then continuously for each year from 2000 to 2019. Starting by turning the phosphate column into its own vector and using the summary function gives the first overview of the data.
+
+```{r}
+Phosphate <- df$Verbrauch_PhosphatLW_t
+summary(Phosphate)
+```
+
+This shows that the minimum amount of phosphate used during the time data was collected was 147 tonnes and the maximum amount 1055 tonnes. It also shows that the mean value is 320.5 tonnes while the median is at 284 tonnes. For the further analysis of how phosphate used developed over time we created a new table with only the phosphate values as well as the overall timeline as numeric values. We opted for the numeric format of the year dates because we found it makes setting limits for visualization plots easier later on.
+
+```{r}
+timeline_numeric <- as.numeric(as.character(df$Jahr))
+df_phosphate <- tibble(timeline_numeric, Phosphate)
+df_phosphate <- setNames(df_phosphate, c("Year","Phosphate_use"))
+view(df_phosphate)
+```
+
+We then used the filter function to find out in which years the minimum and the maximum of tonnes of phosphate used were reached:
+
+```{r}
+df_phosphate %>% 
+  select(Year, Phosphate_use) %>%
+  filter(Phosphate_use == "174" | Phosphate_use == "1055")
+```
+
+Showing that the maximum of 1055 tonnes was used in 1985 and the minimum was reached in 2008 with 174 tonnes of phosphate used as agricultural fertilizer in Germany. This already implies that the amount of phosphate used went down over time, since the maximum amount is located in the least recent year of measurement. However, it also indicates that values did not go down continuously since the minimum was not in the most recent year with available data, which was 2019. To get a better understanding of the overall development of phosphate use over time we then began to visualize our data.
+
+```{r}
+ggplot(data=df_phosphate, aes(x=Year, y=Phosphate_use)) + 
+  geom_bar(stat="identity", width=0.9, fill="mediumaquamarine") +
+  theme_minimal() +
+  ggtitle("Use of phospate fertilizer in Germany 1985-2019") +
+  xlab("Year") +
+  ylab("Phosphate (t)")
+```
+
+```{r}
+df_phosphate %>% 
+  ggplot(aes(Year, Phosphate_use, group = 1)) +
+  geom_line(linetype="solid", color="darkseagreen2", size=1) +
+  geom_point(color="darkseagreen4", size=2) +
+  theme_minimal() +
+  labs(x = "Time (years)", 
+       y = "Phosphate (t)", 
+       title = "Use of phospate fertilizer in Germany 2000-2019") +
+  xlim(2000, 2020) +
+  ylim(100, 400)
+```
+
+```{r}
+
+```
+
+#### Nitrogen
+
+#### River eutrophication
+
+### **Step 2: The Comparison**
+
+## **Discussion**
+
+The data shows a trend of reduction of phosphate and nitrogen inputs into the ecosystem of water bodies (variable XXXX), which in turn has a positive effect on the eutrophication in water bodies and their condition (variable XXX). With the exclusive consideration of these data the analysis comes to the conclusion that a decrease until 2030 of the phosphate values up to .... % is possible. For nitrogen inputs, a reduction of ... % is possible according to the current approach. However, it was already mentioned at the beginning of the work that not only agriculture is involved in the input of nitrogen and phosphate, but also other carriers such as industry and communal wastewater treatment plants. The latter have accomplished a significant reduction in their nutrient inputs to water bodies in recent years, whereas agriculture has remained relatively the same. (Taube et al. 2020. P. 7f.) The improvement in water quality could therefore also be attributed to the reduction in municipal wastewater treatment plants and less to the measures in agriculture.
+
+Reduction in agriculture is an acute problem to protect ecosystems and not to violate the EU Nitrates Directive. The European Union has already reminded Germany several times to implement the Nitrates Directive and reduce inputs from agriculture.  (European Commission. 2019).
+
+The directive is a further motivation to get the limitation of fertilization under control the eutrophication in Germany is a problem to be taken seriously and must be pursued more by the federal government in the coming years.
+
+## **Limitations**
+
+Since only working with already collected data and a dataset which is limited to the annual overall use of phosphate and nitrogen in agriculture over a period of time, as well as a set of measurements on eutrophication in river ecosystems, this report can make no claim on providing a complete analysis of the topic. Furthermore, even where correlations between the different datasets can be observed, this does not imply causation, since other factors which were not accounted for in our datasets may be at play. 
+
+------------------------------------------------------------------------
+
+## **Sources:**
+
+Eurostat. O. J. Who we are. Abgerufen am 13. Dezember, 2020, von <https://ec.europa.eu/eurostat/web/main/about/who-we-are.>
+
+Europäische Kommission. 2019. Nitrat im Grundwasser: Kommission mahnt Deutschland zur Umsetzung des EuGH-Urteils. Abgerufen am 13. Dezember, 2020, von <https://ec.europa.eu/germany/news/20190725-nitrat_de>
+
+Umweltbundesamt. 2020. Eutrophierung. Abgerufen am 13. Dezember, 2020, von <https://www.umweltbundesamt.de/themen/wasser/gewaesser/meere/nutzung-belastungen/eutrophierung#eutrophierung-was-bedeutet-das>
+
+Umweltbundesamt. 2018. Wer wir sind. Abgerufen am 12. Dezember, 2020, von <https://www.umweltbundesamt.de/das-uba/wer-wir-sind.>  
+
+Taube, F., Bach, M., Breuer, L., Ewert, F., Fohrer, N., Leinweber, P., Müller, T. & Wiggering, H. 2020. Novellierung der Stoffstrambilanzverordnung: Stickstoff- und Phosphor-Überschüsse nachhaltig begrenzen. Dessau-Roßlau: Umweltbundesamt.
+
+\
