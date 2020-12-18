@@ -1,5 +1,5 @@
 ---
-title: "R Notebook"
+title: "Lab Report: River Eutrophication"
 output: html_notebook
 ---
 
