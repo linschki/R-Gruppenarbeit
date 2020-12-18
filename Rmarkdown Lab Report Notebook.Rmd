@@ -91,9 +91,10 @@ This concluded our preparation and we continued with the data analysis. To avoid
 
 Step one of our data analysis looks at the individual types of data i.e. how phosphate and nitrogen use in agriculture developed over time, as well as how river eutrophication changed over time.
 
+
 #### Phosphate
 
-The Phosphate column shows the annual use of phosphate as an agricultural fertilizers in tonnes per year with datapoints for the years 1985, 1990, 1995, and then continuously for each year from 2000 to 2019. Starting by turning the phosphate column into its own vector and using the summary function gives the first overview of the data.
+The Phosphate column shows the consumption of phosphate fertilizer in 1,000 metric tons of plant nutrient in German agriculture from 1985 to 2019 with datapoints for the years 1985, 1990, 1995, and then continuously for each year from 2000 to 2019. Starting by turning the phosphate column into its own vector and using the summary function gives the first overview of the data.
 
 ```{r}
 Phosphate <- df$Verbrauch_PhosphatLW_t
@@ -117,16 +118,18 @@ df_phosphate %>%
   filter(Phosphate_use == "174" | Phosphate_use == "1055")
 ```
 
-Showing that the maximum of 1055 tonnes was used in 1985 and the minimum was reached in 2008 with 174 tonnes of phosphate used as agricultural fertilizer in Germany. This already implies that the amount of phosphate used went down over time, since the maximum amount is located in the least recent year of measurement. However, it also indicates that values did not go down continuously since the minimum was not in the most recent year with available data, which was 2019. To get a better understanding of the overall development of phosphate use over time we then began to visualize our data.
+Showing that the maximum of 1,055,000 tonnes was used in 1985 and the minimum was reached in 2008 with 174,000 tonnes of phosphate used as agricultural fertilizer in Germany. This already implies that the amount of phosphate used went down over time, since the maximum amount is located in the least recent year of measurement. However, it also indicates that values did not go down continuously since the minimum was not in the most recent year with available data, which was 2019. To get a better understanding of the overall development of phosphate use over time we then began to visualize our data.
 
 ```{r}
 ggplot(data=df_phosphate, aes(x=Year, y=Phosphate_use)) + 
   geom_bar(stat="identity", width=0.9, fill="mediumaquamarine") +
   theme_minimal() +
-  ggtitle("Use of phospate fertilizer in Germany 1985-2019") +
+  ggtitle("Consumption of phospate fertilizer in Germany 1985-2019") +
   xlab("Year") +
-  ylab("Phosphate (t)")
+  ylab("Consumption in one thousand tons of plant nutrient")
 ```
+
+As seen in the summary earlier, the maximum amount of phosphate was a little over 1,000,000 tonnes, used in 1985. The bar graph further illustrates that in the 5-year intervals between 1985 and 2000 the amount of phosphate used reduced in each of the years where data was available compared to the datapoint from five years before. However, in the timespan between the years 2000 and 2019 the reduction was not as continually. To take a closer look at this timespan we plotted a line graph covering the years 2000 to 2019.
 
 ```{r}
 df_phosphate %>% 
@@ -136,14 +139,64 @@ df_phosphate %>%
   theme_minimal() +
   labs(x = "Time (years)", 
        y = "Phosphate (t)", 
-       title = "Use of phospate fertilizer in Germany 2000-2019") +
+       title = "Consumption of phospate fertilizer in Germany 2000-2019") +
   xlim(2000, 2020) +
   ylim(100, 400)
 ```
 
 ```{r}
-
+phos_perc_change <- df_phosphate %>%
+  mutate(
+    Diff_amount = Phosphate_use - lag(Phosphate_use),
+    Perc_change = (Phosphate_use - lag(Phosphate_use)) / lag(Phosphate_use))
+phos_perc_change <- drop_na(phos_perc_change) # deletes all the row we don't need for this anyway
+View(phos_perc_change)
 ```
+
+Next we made one of these graphs they always make you describe in English assessment exams like the IELTS because they want to see whether you understood that each value references the previous year e.g. the around -10% in 2001 signify a 10% decline of the phosphate used in 2000 as compared to the amount of phosphate used in 2001.
+
+```{r}
+grid.arrange(ggplot(phos_perc_change, aes(x=Year, y=Perc_change, fill=factor(ifelse(Perc_change <0, "positive", "negative")))) +
+               geom_col() +
+               theme_minimal() +
+               scale_fill_manual(guide = FALSE, name = "Type of change", values=c("darkslategray3","darkslategray")) +
+               scale_y_continuous(labels = scales::percent) +
+               xlim(2000, 2020) +
+               labs(x = "Time (years)", 
+                    y = "Change in comparison to the previous year", 
+                    title = "Percentual change"),
+             
+             ggplot(phos_perc_change, aes(x=Year, y=Diff_amount, fill=factor(ifelse(Diff_amount <0, "positive", "negative")))) +
+               geom_col() +
+               theme_minimal() +
+               scale_fill_manual(guide = FALSE, name = "Type of change", values=c("darkslategray3","darkslategray")) +
+               xlim(2000, 2020) +
+               ylim(-150, 120) + # actually aligning them seemed to complicated so I just eyeballed it via ylim
+               labs(x = "Time (years)", 
+                    y = "Change in comparison to the previous year", 
+                    title = "Total change"), nrow = 1, top = "Increase and decline of phospate fertilizer use in Germany 2000-2019")
+```
+
+```{r}
+df_phosphate %>% 
+  select(Year, Phosphate_use) %>%
+  filter(Year == "1985" | Year == "2019")
+```
+
+```{r}
+label_percent(scale = 1)(((211 / 1055 * 100) - 100))
+```
+
+```{r}
+Phos_LW %>% 
+  select(Year, Phosphate_use) %>%
+  filter(Year == "2000" | Year == "2019")
+```
+
+```{r}
+label_percent(accuracy = 0.01, scale = 1)(((211 / 351 * 100) - 100))
+```
+
 
 #### Nitrogen
 
