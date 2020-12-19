@@ -202,6 +202,107 @@ label_percent(accuracy = 0.01, scale = 1)(((211 / 351 * 100) - 100))
 
 #### River eutrophication
 
+summary(`Total eutrophication`)
+
+Now we look at the specific Qualityclass of eutrophication
+
+summary(`Qualityclass II-III`)
+
+summary(`Qualityclass III`)
+
+summary(`Qualityclass III-IV`)
+
+summary(`Qualityclass IV`)
+
+This show us the maximum and minimum of eutrophication in the total eutrophication and the different qualityclasses. In this way the goal for eutrophication in the qualityclasses is 0.00 % so the 
+
+timeline_numeric <- as.character(df$Jahr)
+"df_Total eutrophication" <- tibble(timeline_numeric, `Total eutrophication`)
+`df_Total eutrophication` <-setNames(`df_Total eutrophication`, c("Year", "Total"))
+view(`df_Total eutrophication`)
+
+"df_Qualityclass II-III" <- tibble(timeline_numeric, `Qualityclass II-III`)
+`df_Qualityclass II-III` <- setNames(`df_Qualityclass II-III`, c("Year", "QC"))
+view(`df_Qualityclass II-III`)
+
+"df_Qualityclass III" <- tibble(timeline_numeric, `Qualityclass III`)
+`df_Qualityclass III` <- setNames(`df_Qualityclass III`, c("Year", "QC"))
+view(`df_Qualityclass III`)
+
+"df_Qualityclass III-IV" <- tibble(timeline_numeric, `Qualityclass III-IV`)
+`df_Qualityclass III-IV` <- setNames(`df_Qualityclass III-IV`, c("Year", "QC"))
+view(`df_Qualityclass III-IV`)
+
+"df_Qualityclass IV" <- tibble(timeline_numeric, `Qualityclass IV`)
+`df_Qualityclass IV` <- setNames(`df_Qualityclass IV`, c("Year", "QC"))
+view(`df_Qualityclass IV`)
+
+# We then used the filter function to find out in which years the minimum and the maximum of % of Total eutrophication and the Qualityclasses were reached:
+
+`df_Total eutrophication`%>% 
+  select(Year, Total) %>%
+  filter(Total == "92" | Total == "0")
+
+`df_Qualityclass II-III`%>% 
+  select(Year, QC) %>%
+  filter(QC == "61" | QC == "0")
+
+`df_Qualityclass III`%>% 
+  select(Year, QC) %>%
+  filter(QC == 45 | QC == 0)
+
+`df_Qualityclass III-IV`%>% 
+  select(Year, QC) %>%
+  filter(QC == 38 | QC == 0)
+
+`df_Qualityclass IV`%>% 
+  select(Year, QC) %>%
+  filter(QC == 18 | QC == 0)
+  
+In this way the goal for eutrophication in the qualityclasses is 0.00 % so this is the value we see in the diffrent operation as the value of 2030.
+
+# GGplot um die Entwicklung abzubilden (noch nicht ganz fertig)
+
+
+ggplot(data = `df_Total eutrophication`, aes(x=Year, y=Total)) + 
+  geom_bar(stat="identity", width=0.9, fill="blueviolet") +
+  theme_minimal() +
+  ggtitle("Development of water eutrophication in Germany from 1982 - 2018") +
+  xlab("Year") +
+  ylab("Eutrophication (%)")
+
+
+p1 <- ggplot(data = `df_Qualityclass II-III`, aes(x=Year, y=QC)) + 
+  geom_bar(stat="identity", width=0.7, fill="cadetblue1") +
+  theme_minimal() +
+  ggtitle("Development of water Qualityclass II-III in Germany from 1982 - 2018") +
+  xlab("Year") +
+  ylab("Eutrophication (%)")
+
+
+p2 <- ggplot(data = `df_Qualityclass III`, aes(x=Year, y=QC)) + 
+  geom_bar(stat="identity", width=0.7, fill="cadetblue2") +
+  theme_minimal() +
+  ggtitle("Development of water Qualityclass III in Germany from 1982 - 2018") +
+  xlab("Year") +
+  ylab("Eutrophication (%)")
+
+p3 <- ggplot(data = `df_Qualityclass III-IV`, aes(x=Year, y=QC)) + 
+  geom_bar(stat="identity", width=0.7, fill="cadetblue3") +
+  theme_minimal() +
+  ggtitle("Development of water Qualityclass III-IV in Germany from 1982 - 2018") +
+  xlab("Year") +
+  ylab("Eutrophication (%)")
+
+
+p4 <- ggplot(data = `df_Qualityclass IV`, aes(x=Year, y=QC)) + 
+  geom_bar(stat="identity", width=0.7, fill="cadetblue4") +
+  theme_minimal() +
+  ggtitle("Development of water Qualityclass IV in Germany from 1982 - 2018") +
+  xlab("Year") +
+  ylab("Eutrophication (%)")
+
+
 ### **Step 2: The Comparison**
 
 ## **Discussion**
