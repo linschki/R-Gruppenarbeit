@@ -301,6 +301,67 @@ p4 <- ggplot(data = `df_Qualityclass IV`, aes(x=Year, y=QC)) +
   ggtitle("Development of water Qualityclass IV in Germany from 1982 - 2018") +
   xlab("Year") +
   ylab("Eutrophication (%)")
+  
+# Hier kommt noch die Darstellung der ggplots auf einer Seite, sofern es klappt. 
+
+# Total Eutrophication
+
+`df_Total eutrophication` %>% 
+  ggplot(aes(Year, Total, group = 1)) +
+  geom_line(linetype="solid", color="aquamarine3", size=1) +
+  geom_point(color="brown2", size=1) +
+  theme_minimal() +
+  labs(x = "Time (years)", 
+       y = "Eutrophication (%)", 
+       title = "Development of water qualityclass II-III in Germany 1982-2018") +
+  xlim(1982, 2030) +
+  ylim(0, 100)
+
+# Diffrent Eutrophication from the Qualityclasses
+
+`df_Qualityclass II-III` %>% 
+  ggplot(aes(Year, QC, group = 1)) +
+  geom_line(linetype="solid", color="aquamarine3", size=1) +
+  geom_point(color="brown2", size=1) +
+  theme_minimal() +
+  labs(x = "Time (years)", 
+       y = "Eutrophication (%)", 
+       title = "Development of water qualityclass II-III in Germany 1982-2018") +
+  xlim(1982, 2030) +
+  ylim(0, 100)
+
+`df_Qualityclass III` %>% 
+  ggplot(aes(Year, QC, group = 1)) +
+  geom_line(linetype="solid", color="aquamarine3", size=1) +
+  geom_point(color="brown2", size=1) +
+  theme_minimal() +
+  labs(x = "Time (years)", 
+       y = "Eutrophication (%)", 
+       title = "Development of water qualityclass III in Germany 1982-2018") +
+  xlim(1982, 2030) +
+  ylim(0, 100)
+
+`df_Qualityclass III-IV` %>% 
+  ggplot(aes(Year, QC, group = 1)) +
+  geom_line(linetype="solid", color="aquamarine3", size=1) +
+  geom_point(color="brown2", size=1) +
+  theme_minimal() +
+  labs(x = "Time (years)", 
+       y = "Eutrophication (%)", 
+       title = "Development of water qualityclass III in Germany 1982-2018") +
+  xlim(1982, 2030) +
+  ylim(0, 100)
+
+`df_Qualityclass IV` %>% 
+  ggplot(aes(Year, QC, group = 1)) +
+  geom_line(linetype="solid", color="aquamarine3", size=1) +
+  geom_point(color="brown2", size=1) +
+  theme_minimal() +
+  labs(x = "Time (years)", 
+       y = "Eutrophication (%)", 
+       title = "Development of water qualityclass III in Germany 1982-2018") +
+  xlim(1982, 2030) +
+  ylim(0, 100)
 
 
 ### **Step 2: The Comparison**
