@@ -101,7 +101,7 @@ Phosphate <- df$Verbrauch_PhosphatLW_t
 summary(Phosphate)
 ```
 
-This shows that the minimum amount of phosphate used during the time data was collected was 147 tonnes and the maximum amount 1055 tonnes. It also shows that the mean value is 320.5 tonnes while the median is at 284 tonnes. For the further analysis of how phosphate used developed over time we created a new table with only the phosphate values as well as the overall timeline as numeric values. We opted for the numeric format of the year dates because we found it makes setting limits for visualization plots easier later on.
+This shows that the minimum amount of phosphate used during the time data was collected was 147,000 tonnes and the maximum amount 1,055,000 tonnes. It also shows that the mean value is 320,500 tonnes while the median is at 284,000 tonnes. For the further analysis of how phosphate used developed over time we created a new table with only the phosphate values as well as the overall timeline as numeric values. We opted for the numeric format of the year dates because we found it makes setting limits for visualization plots easier later on.
 
 ```{r}
 timeline_numeric <- as.numeric(as.character(df$Jahr))
@@ -138,12 +138,14 @@ df_phosphate %>%
   geom_point(color="darkseagreen4", size=2) +
   theme_minimal() +
   labs(x = "Time (years)", 
-       y = "Phosphate (t)", 
+       y = "Consumption in one thousand tons of plant nutrient", 
        title = "Consumption of phospate fertilizer in Germany 2000-2019") +
   xlim(2000, 2020) +
   ylim(100, 400)
 ```
+Again it can be seen that overall, the amount of phosphate fertilizers consumed each year declined. Especially in 2008 the consumption slumped. This is the minimum of 147,000 tonnes as already seen in the summary earlier. However, there has been a sharp rise in consumption in the two years that followed. And after a period of decline another rise which reached a value of around 300,000 tonnes in 2014. Since 2014, the consumption of phosphate fertilizers went down again, reaching 211,000 tonnes in 2018 and 2019.
 
+We then made a new table and added a column on the amount of phosphate which was used more or less in comparison to the previous year and another column with the change in percent this corresponds to using the lag-function. We limited the table to the years 2001-2019 as this is the time frame for which the phosphate table has continous annual data, which is needed to assess the change in comparison to the previous year by dropping all rows which contained empty cells.
 ```{r}
 phos_perc_change <- df_phosphate %>%
   mutate(
@@ -153,8 +155,7 @@ phos_perc_change <- drop_na(phos_perc_change) # deletes all the row we don't nee
 View(phos_perc_change)
 ```
 
-Next we made one of these graphs they always make you describe in English assessment exams like the IELTS because they want to see whether you understood that each value references the previous year e.g. the around -10% in 2001 signify a 10% decline of the phosphate used in 2000 as compared to the amount of phosphate used in 2001.
-
+We also wanted to visualize this , so next we made two graphs to show both the percental change, as well as the total amount that had changed as compared to the value of the previous year.
 ```{r}
 grid.arrange(ggplot(phos_perc_change, aes(x=Year, y=Perc_change, fill=factor(ifelse(Perc_change <0, "positive", "negative")))) +
                geom_col() +
@@ -163,8 +164,8 @@ grid.arrange(ggplot(phos_perc_change, aes(x=Year, y=Perc_change, fill=factor(ife
                scale_y_continuous(labels = scales::percent) +
                xlim(2000, 2020) +
                labs(x = "Time (years)", 
-                    y = "Change in comparison to the previous year", 
-                    title = "Percentual change"),
+                    y = "Change in comparison to the previous year (in percent)", 
+                    title = "Percental change"),
              
              ggplot(phos_perc_change, aes(x=Year, y=Diff_amount, fill=factor(ifelse(Diff_amount <0, "positive", "negative")))) +
                geom_col() +
@@ -173,22 +174,24 @@ grid.arrange(ggplot(phos_perc_change, aes(x=Year, y=Perc_change, fill=factor(ife
                xlim(2000, 2020) +
                ylim(-150, 120) + # actually aligning them seemed to complicated so I just eyeballed it via ylim
                labs(x = "Time (years)", 
-                    y = "Change in comparison to the previous year", 
+                    y = "Change (in one thousand tons of plant nutrient)", 
                     title = "Total change"), nrow = 1, top = "Increase and decline of phospate fertilizer use in Germany 2000-2019")
 ```
+The sharp decline between the years 2007 and 2008 is clearly visible. From the graph showing the total change it can be seen that the amount of phosphate used in 2008 reduced by almost 200,000 tonnes, which corresponds to a decline of over 40 % as seen from the percental change graph.
 
+To finish off our analysis of our data on phosphate by itself, we wanted to see how the consumption of phosphate had changed in total over the course of time, expressed in percent.
 ```{r}
 df_phosphate %>% 
   select(Year, Phosphate_use) %>%
   filter(Year == "1985" | Year == "2019")
 ```
-
+We did this by filtering for the phosphate values of our start and end year and inserting these values into a simple percentage equation. There is probably a more elegant solution for this in R, however, if there is we could not find it, or if we did did not understand what we were looking at. So, instead we dug deep trying to remember what we had learned in school about calculating with percentages and came up with this:
 ```{r}
-label_percent(scale = 1)(((211 / 1055 * 100) - 100))
+label_percent(scale = 1, accuracy = 0.01)(((211 / 1055 * 100) - 100))
 ```
-
+Which showed us that between the years 1985 and 2019 phosphate consumption for agricultural purposes declined by 80 %. But as we saw in the first bar chart on phosphate a large decline in consumption already took place before 2000 where only data for every fifth year is available. To take a closer look at the time frame of which we have continous data, we repeated the previous step for the years 2000-2019.
 ```{r}
-Phos_LW %>% 
+df_phosphate %>% 
   select(Year, Phosphate_use) %>%
   filter(Year == "2000" | Year == "2019")
 ```
@@ -196,9 +199,7 @@ Phos_LW %>%
 ```{r}
 label_percent(accuracy = 0.01, scale = 1)(((211 / 351 * 100) - 100))
 ```
-
-
-#### Nitrogen
+Showing that during this time the phosphate consumption dropped by around 40% in 2019 as compared to 2000.
 
 #### River eutrophication
 
