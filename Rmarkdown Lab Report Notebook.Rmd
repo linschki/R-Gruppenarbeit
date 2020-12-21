@@ -1,21 +1,26 @@
 ---
-title: "Lab Report: River Eutrophication"
-output: html_notebook
+title: "RMakrdown Report: River Eutrophication"
+author: Lina , Mira Kracke, Lukas
+date: December 23, 2020
+output:
+  rmarkdown::html_document:
+    theme: paper
+    highlight: tango
+    toc: true
+    toc_float: true
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
-
-```{r}
-plot(cars)
+```{=html}
+<style>
+body {
+  text-align: justify; 
+  font-size: 14pt;}
+  h1,h2,h3,h4,h5,h6{
+  font-size: 16pt;}
+</style>
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+------------------------------------------------------------------------
 
 ## **Introduction**
 
@@ -37,7 +42,7 @@ The data used in this work mainly consider the environmental impacts of specific
 
 In this work the following datasets are compared with each other: Sampling sites which exceed the requirement for positive status for total phosphorus in rivers, nitrogen surplus of the national farm-gate balance and an overview of the annual use of phosphate fertilizer in Germany. The datasets used show data from different points in time, therefore in the first step of the analysis the individual datasets are considered alone. Only in the second step of the analysis the data are merged and compared and there only from the common years.
 
-## **Hypothesis**
+## **Research Focus**
 
 ## **The Analysis**
 
@@ -50,11 +55,12 @@ We began by loading all our required R packages:
 ```{r}
     library(tidyverse)
     library(scales)
+    library(gridExtra)
     library(stats)
     library(dplyr)
 ```
 
-And then importing the clean datasets from out folder:
+And then importing the clean datasets from our folder:
 
 ```{r}
 library(readxl)
