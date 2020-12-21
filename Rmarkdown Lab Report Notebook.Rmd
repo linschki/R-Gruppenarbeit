@@ -207,6 +207,7 @@ label_percent(accuracy = 0.01, scale = 1)(((211 / 351 * 100) - 100))
 ```
 Showing that during this time the phosphate consumption dropped by around 40% in 2019 as compared to 2000.
 
+
 #### Nitrogen
 
 ---
@@ -216,7 +217,9 @@ output: html_document
 
 
 The Nitrogen column shows the overall agricultural nitrogen balance in Germany between 1990 and 2018 in relation to agricultural used land.
-Starting by turning the nitrogen column into it's own vector and using the summary function gives a
+The measuring unit here is kilograms of nitrogen per hectar agricultural used land in Germany (kilogram per hectar), which differs from the
+measurement of phosphate measured in 1.000 metric tons of plant nutrient.
+To start analizing the data of nitrogen the nitrogen column will be turned into it's own vector and the summary function is used to give a
 first overview of the data.
 
 ```{r}
