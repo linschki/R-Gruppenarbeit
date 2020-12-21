@@ -1,6 +1,6 @@
 ---
 title: "RMakrdown Report: River Eutrophication"
-author: Lina , Mira Kracke, Lukas
+author: Lina , Mira Kracke, Lukas Zimmermann
 date: December 23, 2020
 output:
   rmarkdown::html_document:
