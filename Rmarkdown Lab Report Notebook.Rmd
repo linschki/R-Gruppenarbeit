@@ -207,6 +207,156 @@ label_percent(accuracy = 0.01, scale = 1)(((211 / 351 * 100) - 100))
 ```
 Showing that during this time the phosphate consumption dropped by around 40% in 2019 as compared to 2000.
 
+#### Nitrogen
+
+---
+title: "Nitrogen_analysis"
+output: html_document
+---
+
+
+The Nitrogen column shows the overall agricultural nitrogen balance in Germany between 1990 and 2018 in relation to agricultural used land.
+Starting by turning the nitrogen column into it's own vector and using the summary function gives a
+first overview of the data.
+
+```{r}
+Nitrogen <- df$Stickstoff_Jahreswert_LW
+summary(Nitrogen)
+```
+
+The minimum amount of nitrogen used in agriculture in Germany was 83.0 kg per hectar
+and the maximum amount 141.0 kg per hectar. In addition one can see that the mean
+value is 103.2 kg per hectar while the median is 104.0 kg.
+For the further analysis of the nitrogen balance development over time we created
+a new table with just the nitrogen values and a timeline of the years in numeric values.
+
+```{r}
+timeline_numeric <- as.numeric(as.character(df$Jahr))
+df_nitrogen <- tibble(timeline_numeric, Nitrogen)
+df_nitrogen <- setNames(df_nitrogen, c("Year","Nitrogen_use"))
+view(df_nitrogen)
+```
+
+We then used the filter function to find out in which years the minimum and the maximum amount of nitrogen was reached:
+
+```{r}
+df_nitrogen %>%
+  select(Year, Nitrogen_use) %>%
+  filter(Nitrogen_use == "83" | Nitrogen_use == "141")
+```
+
+The maximum of nitrogen use was reached in 1990 with 141 kg per hectar and the minimum was found in 2009
+with 83 kg per hectar. This already implies a deacrease of nitrogen fertilizer used in agriculture from 1990 to 2009.
+However, it also shows that the values fluctuate since the minimum value is in 2009 and then went up again to 2018.
+To see the development of the values we started visualizing the data to get a better understanding.
+
+```{r}
+ggplot(data=df_nitrogen, aes(x=Year, y=Nitrogen_use)) + 
+  geom_bar(stat="identity", width=0.9, fill="coral") +
+  theme_minimal() +
+  ggtitle("Overall agricultural nitrogen balance in Germany 1990-2018") +
+  xlab("Year") +
+  ylab("Consumption in kilogram per hectar in relation to agricultural used land")
+```
+
+As mentioned before, the maximum amount of nitrogen used in agriculture in Germany was found in the first year,
+data was collected for that purpose with 141 kg per hectar. Since then, the values decreased to 117 kg per hectar
+one year later. The tendency from that time on is a fluctuating deacrease of nitrogen use. There are three peak
+values in the years 2000 with 115 kg per hectar, 2011 with 107 kg per hectar and 2015 with 103 kg per hectar.
+From 1991 to 2009 the development of the data shows a rather decreasing tendency with slightly fluctuating values,
+whereas since 2009 there is no continous tendency of a decrase of nitrogen use but its rather fluctuating. In 2008
+we find the lowest amount of nitrogen used in agriculture in the timespan data was collected. However, since then
+the data shows a high increase over 2 years to 107 kg per hectar, a decrease to almost minimum amount of nitrogen
+as in 2009 and an increase again from 85 in 2014 to 103 in 2018. A general tendency of a decreasing use of nitrogen
+in agriculture can be formulated, but not a linear decrease. To better evaluate the development we plottet a line
+graph of the time from 2000 to 2018.
+
+```{r}
+df_nitrogen %>% 
+  ggplot(aes(Year, Nitrogen_use, group = 1)) +
+  geom_line(linetype="solid", color="salmon", size=1) +
+  geom_point(color="indianred", size=2) +
+  theme_minimal() +
+  labs(x = "Time (years)", 
+       y = "Nitrogen (t)", 
+       title = "Overall agricultural nitrogen balance in Germany 2000-2018") +
+  xlim(1990, 2020) +
+  ylim(50, 150)
+```
+
+The line graph visualizes a generall decline of nitrogen consumption in german agriculture from 1990-2018.
+Especially from 1990 to 2008 a clear decrease with few fluctuations of higher values in 1995 and 2000 of
+nitrogen consumption can be analized. Since then, mentionable de- and inclines from the time period 2008-2015
+can be seen. The graph illustrates a mentionable peak in 2011 with 107 kg per hectar compared to the years
+before and after with 83 kg per hectar in 2008 and three years later in 2014 with 85 kg nitrogen per hectar.
+For that time period no trend of de- or incline of nitrogen use can be seen. Afterall, from 2015 nitrogen
+consumption decreases continuasly to 2019, from 103 to 89 kg nitrogen per hectar.
+
+We built another table with an extra column for the changing amount of nitrogen from year to year and another
+column for the percentage change of nitrogen from year to year by using the lag-function. We limited the table
+to the years 1991-2018, as only in this time period we have continous data, which is needed for the percentage
+change of nitrogen to previous years. All other cells are ignored with this step.
+
+```{r}
+nitr_perc_change <- df_nitrogen %>%
+  mutate(
+    Diff_amount = Nitrogen_use - lag(Nitrogen_use),
+    Perc_change = (Nitrogen_use - lag(Nitrogen_use)) / lag(Nitrogen_use))
+nitr_perc_change <- drop_na(nitr_perc_change) # deletes all the row we don't need for this anyway
+View(nitr_perc_change)
+```
+
+In the next step this table is also visualized in two graphs, with both the percantage change and the total
+amount of nitrogen use differing from one year to another. 
+
+```{r}
+grid.arrange(ggplot(nitr_perc_change, aes(x=Year, y=Perc_change, fill=factor(ifelse(Perc_change<0, "positive", "negative")))) +
+               geom_col() +
+               theme_minimal() +
+               scale_fill_manual(guide = FALSE, name = "Type of change", values=c("lightcoral","indianred4")) +
+               scale_y_continuous(labels = scales::percent) +
+               xlim(1990, 2020) +
+               labs(x = "Time (years)", 
+                    y = "Change in comparison to the previous year (in percent)", 
+                    title = "Percentage change"),
+             
+             ggplot(nitr_perc_change, aes(x=Year, y=Diff_amount, fill=factor(ifelse(Diff_amount <0, "positive", "negative")))) +
+               geom_col() +
+               theme_minimal() +
+               scale_fill_manual(guide = FALSE, name = "Type of change", values=c("lightcoral","indianred4")) +
+               xlim(1990, 2020) +
+               ylim(-150, 120) +
+               labs(x = "Time (years)", 
+                    y = "Change (in kilogram per hectar)", title = "Total change"),
+                    nrow = 1, top = "Increase and decline of overall agricultural nitrogen balance in Germany 2000-2018")
+```
+
+With that visualization the first increase of nitrogen fertilizer compared to previous years can be seen in 1995.
+Here again the most striking part becomes visible again in 2009 with a percentage change of about -18.6% to the
+previous year and the following percantage change of 9.6% in 2010. Hereafter, in 2011 the percentage change is
+even higher with a positive change of +17.6% compared to the year before. This underlines the fluctuation in this
+time, as analized in the graph before. With the graph showing the total change one can see that the difference from
+2008 to 2009 with -19 kg differnece and from 2014 to 2015 with 18 kg difference the highest is the most striking.
+
+To finilize our analysis of the data on the overall agricultural nitrogen balance in Germany, we wanted to show the
+total percentage change over the whole timeperiod data on nitrogen use in agriculture was collected.
+
+```{r}
+df_nitrogen %>% 
+  select(Year, Nitrogen_use) %>%
+  filter(Year == "1990" | Year == "2018")
+```
+
+We did this by filtering out the nitrogen values of the starting and final year and inserting these values into
+the percantage equation we already came up with for the phosphate analysis.
+
+```{r}
+label_percent(accuracy = 0.01, scale = 1)(((89 / 115 * 100) - 100))
+```
+
+This shows that the overall agricultural nitrogen balance in Germany between the years 1990 and 2018 declined by -22.61%. 
+
+
 #### River eutrophication
 
 ---
