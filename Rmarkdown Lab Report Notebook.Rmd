@@ -214,12 +214,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-```{r}
-df <- read_excel("~/R/data_clean/df.xlsx")
-```
-
 The following analysis takes a closer look at the eutrophication data for water bodies in Germany. The development is analyzed in different water quality classes (II-IV). In addition, the total eutrophication is looked at. The data are available from 1982 - 2018. or a first overview, the data important for this part of the analysis are collected from the entire data set. 
 
 ```{r}
