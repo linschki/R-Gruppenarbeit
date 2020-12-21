@@ -1,6 +1,6 @@
 ---
 title: "RMakrdown Report: River Eutrophication"
-author: Lina , Mira Kracke, Lukas Zimmermann
+author: Lina Hohlbein, Mira Kracke, Lukas Zimmermann
 date: December 23, 2020
 output:
   rmarkdown::html_document:
@@ -209,12 +209,6 @@ Showing that during this time the phosphate consumption dropped by around 40% in
 
 
 #### Nitrogen
-
----
-title: "Nitrogen_analysis"
-output: html_document
----
-
 
 The Nitrogen column shows the overall agricultural nitrogen balance in Germany between 1990 and 2018 in relation to agricultural used land.
 The measuring unit here is kilograms of nitrogen per hectar agricultural used land in Germany (kilogram per hectar), which differs from the
