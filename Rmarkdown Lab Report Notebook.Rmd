@@ -452,6 +452,40 @@ The second graph of total eutrophication shows the development of eutrophication
   xlim(1982, 2030) +
   ylim(0, 100)
 ```
+The total eutrophication data were calculated by changing the percentages, i.e. the respective increase or decrease in eutrophication.On the one hand the increase and decrease between the years in percent and on the other hand the total change from 1982 - 2018 were considered. Both diagrams should visualize the change again and make it more clearly visible. 
+
+
+```{r}
+eutrophication_perc_change <- `df_Total eutrophication` %>%
+  mutate(Diff_amount = `Total eutrophication` - lag(`Total eutrophication`),
+    Perc_change = (`Total eutrophication` - lag(`Total eutrophication`)) / lag(`Total eutrophication`))
+eutrophication_perc_change <- drop_na(eutrophication_perc_change) 
+View(eutrophication_perc_change)
+```
+
+
+```{r}
+grid.arrange(ggplot(eutrophication_perc_change, aes(x=Year, y=Perc_change, fill=factor(ifelse(Perc_change <0, "positive", "negative")))) +
+               geom_col() +
+               theme_minimal() +
+               scale_fill_manual(guide = FALSE, name = "Type of change", values=c("darkslategray3","darkslategray")) +
+               scale_y_continuous(labels = scales::percent) +
+               xlim(1982, 2020) +
+               labs(x = "Time (years)", 
+                    y = "Change in comparison to the previous year (in percent)", 
+                    title = "Percental change"),
+             
+             ggplot(eutrophication_perc_change, aes(x=Year, y=Diff_amount, fill=factor(ifelse(Diff_amount <0, "positive", "negative")))) +
+               geom_col() +
+               theme_minimal() +
+               scale_fill_manual(guide = FALSE, name = "Type of change", values=c("darkslategray3","darkslategray")) +
+               xlim(1982, 2020) +
+               ylim(-10, 10) + 
+               labs(x = "Time (years)", 
+                    y = "Change (in %)", 
+                    title = "Total change"), nrow = 1, top = "Increase and decline of eutrophication in rivers of Germany 1982-2018")
+```
+
 By presenting the data in the other graphs, the developments of water quality classes III, III-IV and IV can be named with a clear positive trend towards attainment of 0.00% eutrophication in 2030.
 
 The data can be used to forecast trends towards the 0.00% eutrophication target. However, it should be noted that the prediction cannot be considered complete, as there are many more factors involved in reducing eutrophication. 
