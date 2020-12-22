@@ -44,6 +44,8 @@ In this work the following datasets are compared with each other: Sampling sites
 
 ## **Research Focus**
 
+This work is concerned with the development of nitrate and phosphorus inputs. In this sense, the consequences of the input are considered and a forecast is made for the coming years until 2030. Thereby this work tries to model the development of the eutrophication until 2030 on the basis of the different data sets. The research interest focuses on the past years and the possible development until 2030, with a special focus on where further action is needed to get to the reduction targets and by how much the input still has to decrease.  
+
 ## **The Analysis**
 
 Our data analysis technically started before we even imported our datasets into RStudio for the first time. As you can see in the *data_raw* folder, the original files include a lot of additional information and explanations on the data, which get in the way when importing them into RStudio directly. We therefore cleaned the datasets up a little in Excel to include just the needed values. The clean datasets, as well as a merged dataframe of all our datasets can be found in *data_clean*.
