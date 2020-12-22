@@ -727,16 +727,19 @@ Since only working with already collected data and a dataset which is limited to
 
 ## **Sources:**
 
-BMU 2016. Chemische Gewässergüteklassen. Abgerufen am 21. Dezember, 2020, von https://www.bmu.de/themen/wasser-abfall-boden/binnengewaesser/fluesse-und-seen/schutzziele-und-bewertungsparameter/chemische-gewaessergueteklassifizierung/
 
-Eurostat. O. J. Who we are. Abgerufen am 13. Dezember, 2020, von <https://ec.europa.eu/eurostat/web/main/about/who-we-are.>
+BMU 2016. chemical water quality classes. Retrieved December 21, 2020, from https://www.bmu.de/themen/wasser-abfall-boden/binnengewaesser/fluesse-und-seen/schutzziele-und-bewertungsparameter/chemische-gewaessergueteklassifizierung/
 
-Europäische Kommission. 2019. Nitrat im Grundwasser: Kommission mahnt Deutschland zur Umsetzung des EuGH-Urteils. Abgerufen am 13. Dezember, 2020, von <https://ec.europa.eu/germany/news/20190725-nitrat_de>
+Eurostat. O. J. Who we are. Retrieved December 13, 2020, from <https://ec.europa.eu/eurostat/web/main/about/who-we-are.>
 
-Umweltbundesamt. 2020. Eutrophierung. Abgerufen am 13. Dezember, 2020, von <https://www.umweltbundesamt.de/themen/wasser/gewaesser/meere/nutzung-belastungen/eutrophierung#eutrophierung-was-bedeutet-das>
+European Commission. 2019. nitrates in groundwater: Commission urges Germany to implement ECJ ruling. Retrieved December 13, 2020, from <https://ec.europa.eu/germany/news/20190725-nitrat_de>
 
-Umweltbundesamt. 2018. Wer wir sind. Abgerufen am 12. Dezember, 2020, von <https://www.umweltbundesamt.de/das-uba/wer-wir-sind.>  
+F., Taube, M., Bach, L., Breuer, F., Ewert, N., Fohrer, P., Leinweber, T. Müller & H., Wiggering. 2020. amendment of the Stoffstrambilanzverordnung: sustainably limiting nitrogen and phosphorus surpluses. Dessau-Roßlau: Federal Environment Agency.
 
-Taube, F., Bach, M., Breuer, L., Ewert, F., Fohrer, N., Leinweber, P., Müller, T. & Wiggering, H. 2020. Novellierung der Stoffstrambilanzverordnung: Stickstoff- und Phosphor-Überschüsse nachhaltig begrenzen. Dessau-Roßlau: Umweltbundesamt.
+J. Arle, H. Bartel, C. Baumgarten, A. Bertram, K. Blondzik, S. Brandt, F. Brauer, U. Claussen, H. P. Damian, D. Dieter, C. Galander, H. Ginzky, S. Grimm, M. Helmecke, K. Hofmeier, M. Hofmeier, W. Hülsmann, B. Kirschbaum, T. Knobloch, K. Koppe, J. Koschorreck, M. Krakau, W. Leujak, C. Mathan, V. Mohaupt, S. Naumann, C. Pickl, U. Pirntke, T. Rapp, A. Rau, J. Rechenberg, S. Richter, A. Roskosch, C. Sedello, A. Stoefen O Brien, M. Suhr, R. Szewzyk, A. Ullrich, U. Wachotsch, A. Walter, A. Weiß, S. Werner, C. Winde, G. Winkelmann-Oei, R. Wolter 2017. water management in Germany-basics, pressures and measures. Dessau-Roßlau: Federal Environment Agency.
 
-\
+Federal Environment Agency. 2020. eutrophication. Retrieved December 13, 2020, from <https://www.umweltbundesamt.de/themen/wasser/gewaesser/meere/nutzung-belastungen/eutrophierung#eutrophierung-was-bedeutet-das>
+
+Umweltbundesamt. 2018. who we are. Retrieved December 12, 2020, from <https://www.umweltbundesamt.de/das-uba/wer-wir-sind.>  
+
+C., Tölle-Nolting. 2019. demands for the adaptation of the fertilizer ordinance. Berlin: Naturschutzbund Deutschland (NABU) e. V. 
