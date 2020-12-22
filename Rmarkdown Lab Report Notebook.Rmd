@@ -356,18 +356,7 @@ This shows that the overall agricultural nitrogen balance in Germany between the
 
 #### River eutrophication
 
----
-title: "Gruppenarbeit"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
-
-The following analysis takes a closer look at the eutrophication data for water bodies in Germany. The development is analyzed in different water quality classes (II-IV). In addition, the total eutrophication is looked at. The data are available from 1982 - 2018. or a first overview, the data important for this part of the analysis are collected from the entire data set. The data set provides conclusions about the summarized eutrophication of the water bodies, but also about the status of the different water quality classes. The water quality classes describe the condition of the water bodies. The water quality class one stands for waters without antropogenic pollution. The second class of the water quality classes in turn stands for a moderate pollution, the class II-III for a significant pollution, the class III for an increased pollution, the classes III-IV for a high pollution and the IV water quality class finally stands for a very high pollution. In the data used, the classes subjected to antroprogenic pollution are listed and analyzed for eutrophication (BMU, 2016).
+The following analysis takes a closer look at the eutrophication data for water bodies in Germany. The development is analyzed in different water quality classes (II-IV). In addition, the total eutrophication is looked at. The data are available from 1982 - 2018. or a first overview, the data important for this part of the analysis are collected from the entire data set. The data set provides conclusions about the summarized eutrophication of the water bodies, but also about the status of the different water quality classes. The water quality classes describe the condition of the water bodies. The water quality class one stands for waters without antropogenic pollution. The second class of the water quality classes in turn stands for a moderate pollution, the class II-III for a significant pollution, the class III for an increased pollution, the classes III-IV for a high pollution and the IV water quality class finally stands for a very high pollution. In the data used, the classes subjected to antroprogenic pollution are listed and analyzed for eutrophication. (BMU, 2016)
 
 ```{r}
 "Quality class II-III" <- c(df$`Güteklasse_II-III`)
@@ -450,6 +439,10 @@ view(`df_Quality class IV`)
 
 The newly created data sets are filtered in detail to the minimums and maximums of the respective years in order to make a more accurate statement about the data.
 
+The filter function shows that the minimum is 2030 in any case. This allows the conclusion that this is the goal of the development and that the eutrophication should have decreased to 0.00% by 2030. In order to look at this development in more detail, the individual data sets are presented graphically in the following. 
+
+At this point it should be noted that the filter function did not work for all data sets as a whole. Unfortunately, no maximum values could be determined for the water quality classes II-III, III and IV. By looking at the data sets, it became apparent that the missing data were all decimal numbers. A possible source of error could be the transfer of comma and point, since our data set is in German and R works in English, the error could be there, but this is also only a guess. By different attempts again and again no results for the maximum and minimum could be obtained.  In addition, it was also tried to search for the complete number with all decimal places, but this also did not lead to the desired result, so that the results could only be displayed incompletely. 
+
 ```{r}
 `df_Total eutrophication`%>% 
   select(Year, Total) %>%
@@ -480,79 +473,17 @@ The newly created data sets are filtered in detail to the minimums and maximums 
   filter(QC == "18" | QC == "0")
 ```
 
-The filter function shows that the minimum is 2030 in any case. This allows the conclusion that this is the goal of the development and that the eutrophication should have decreased to 0.00% by 2030. In order to look at this development in more detail, the individual data sets are presented graphically in the following. 
-
-At this point it should be noted that the filter function did not work for all data sets as a whole. The reason for this was not obvious, since the application was the same for each of the five data sets. 
+The first graph shows the total eutrophication from 1982 - 2018. The trend is clearly to reduce eutrophication, although the target of 0.00% eutrophication in 2030 still seems far away. But this will be examined in more detail below.
 
 ```{r}
 ggplot(data = `df_Total eutrophication`, aes(x=Year, y=Total)) + 
-  geom_bar(stat="identity", width=0.9, fill="blueviolet") +
+  geom_bar(stat="identity", width=0.9, fill="darkslateblue") +
   theme_minimal() +
   ggtitle("Development of water eutrophication in Germany from 1982 - 2018") +
   xlab("Year") +
   ylab("Eutrophication (%)")
 ```
-The first graph shows the total eutrophication from 1982 - 2018. The trend is clearly to reduce eutrophication, although the target of 0.00% eutrophication in 2030 still seems far away. But this will be examined in more detail below.
-
-```{r}
-ggplot(data = `df_Quality class II-III`, aes(x=Year, y=QC)) + 
-  geom_bar(stat="identity", width=0.7, fill="cadetblue1") +
-  theme_minimal() +
-  ggtitle("Development of water quality class II-III in Germany from 1982 - 2018") +
-  xlab("Year") +
-  ylab("Eutrophication (%)")
-```
-The development in water quality class II-III indicates an increasing development of eutrophication until 2015. From 2015 the eutrophication decreases slightly, but the value is still over 50% in 2018, so the target of 0.00% eutrophication by 2030 seems far away.
-
-```{r}
-ggplot(data = `df_Quality class III`, aes(x=Year, y=QC)) + 
-  geom_bar(stat="identity", width=0.7, fill="cadetblue2") +
-  theme_minimal() +
-  ggtitle("Development of water quality class III in Germany from 1982 - 2018") +
-  xlab("Year") +
-  ylab("Eutrophication (%)")
-
-```
-Water quality class III is considered in the third presentation. The development shows the highest level of eutrophication in 1993. From this time on, the trend is downward, but always with increasing outbreaks of eutrophication between the different years. In the last measured year, however, the eutrophication is below five percent. 
-
-```{r}
-ggplot(data = `df_Quality class III-IV`, aes(x=Year, y=QC)) + 
-  geom_bar(stat="identity", width=0.7, fill="cadetblue3") +
-  theme_minimal() +
-  ggtitle("Development of water quality class III-IV in Germany from 1982 - 2018") +
-  xlab("Year") +
-  ylab("Eutrophication (%)")
-
-```
-The graph for water quality classes III-IV, on the other hand, shows a clear downward trend in eutrophication. The highest level was reached in 1986 and continued to fall after 1989 until it dropped below five percent in 1994. In the following years up to 2018, eutrophication no longer breaks the five percent barrier.
-
-```{r}
-ggplot(data = `df_Quality class IV`, aes(x=Year, y=QC)) + 
-  geom_bar(stat="identity", width=0.7, fill="cadetblue4") +
-  theme_minimal() +
-  ggtitle("Development of water quality class IV in Germany from 1982 - 2018") +
-  xlab("Year") +
-  ylab("Eutrophication (%)")
-
-```
-The last graphic again deals explicitly with water quality class IV. The peak of the class is, as can be seen from the previous graph, before 1990, more specifically 1985. As of 1992, the eutrophication in this class no longer exceeds the five percent barrier. 
-
-In order to be able to look at the individual developments in more detail, the data will be presented in more detail using ggoints and gglines.
-
-```{r}
-`df_Total eutrophication` %>% 
-  ggplot(aes(Year, Total, group = 1)) +
-  geom_line(linetype="solid", color="aquamarine3", size=1) +
-  geom_point(color="brown2", size=1) +
-  theme_minimal() +
-  labs(x = "Time (years)", 
-       y = "Eutrophication (%)", 
-       title = "Development of total eutrophication in Germany 1982-2018") +
-  xlim(1982, 2030) +
-  ylim(0, 100)
-```
-
-The second graph of total eutrophication shows the development of eutrophication again in a clearer picture. However, the clear trend towards a reduction in eutrophication can also be seen here. 
+The following graphs show the development of the different water quality classes in more detail and allow a conclusion to be drawn about the development and the achievement of the targets. The development in water quality class II-III indicates an increasing development of eutrophication until 2015. From 2015 the eutrophication decreases slightly, but the value is still over 50% in 2018, so the target of 0.00% eutrophication by 2030 seems far away. 
 
 ```{r}
 `df_Quality class II-III` %>% 
@@ -566,6 +497,7 @@ The second graph of total eutrophication shows the development of eutrophication
   xlim(1982, 2030) +
   ylim(0, 100)
 ```
+Water quality class III is considered in the third presentation. The development shows the highest level of eutrophication in 1993. From this time on, the trend is downward, but always with increasing outbreaks of eutrophication between the different years. In the last measured year 2018, however, the eutrophication is below five percent.
 
 ```{r}
 `df_Quality class III` %>% 
@@ -580,6 +512,8 @@ The second graph of total eutrophication shows the development of eutrophication
   ylim(0, 100)
 ```
 
+The graph for water quality classes III-IV, on the other hand, shows a clear downward trend in eutrophication. The highest level was reached in 1986 and continued to fall after 1989 until it dropped below five percent in 1994. In the following years up to 2018, eutrophication no longer breaks the five percent barrier.
+
 ```{r}
 `df_Quality class III-IV` %>% 
   ggplot(aes(Year, QC, group = 1)) +
@@ -593,6 +527,8 @@ The second graph of total eutrophication shows the development of eutrophication
   ylim(0, 100)
 ```
 
+The last graphic again deals explicitly with water quality class IV. The peak of the class is, as can be seen from the previous graph, before 1990, more specifically 1985. As of 1992, the eutrophication in this class no longer exceeds the five percent barrier. 
+
 ```{r}
 `df_Quality class IV` %>% 
   ggplot(aes(Year, QC, group = 1)) +
@@ -605,41 +541,7 @@ The second graph of total eutrophication shows the development of eutrophication
   xlim(1982, 2030) +
   ylim(0, 100)
 ```
-The total eutrophication data were calculated by changing the percentages, i.e. the respective increase or decrease in eutrophication.On the one hand the increase and decrease between the years in percent and on the other hand the total change from 1982 - 2018 were considered. Both diagrams should visualize the change again and make it more clearly visible. 
-
-
-```{r}
-eutrophication_perc_change <- `df_Total eutrophication` %>%
-  mutate(Diff_amount = `Total eutrophication` - lag(`Total eutrophication`),
-    Perc_change = (`Total eutrophication` - lag(`Total eutrophication`)) / lag(`Total eutrophication`))
-eutrophication_perc_change <- drop_na(eutrophication_perc_change) 
-View(eutrophication_perc_change)
-```
-
-
-```{r}
-grid.arrange(ggplot(eutrophication_perc_change, aes(x=Year, y=Perc_change, fill=factor(ifelse(Perc_change <0, "positive", "negative")))) +
-               geom_col() +
-               theme_minimal() +
-               scale_fill_manual(guide = FALSE, name = "Type of change", values=c("darkslategray3","darkslategray")) +
-               scale_y_continuous(labels = scales::percent) +
-               xlim(1982, 2020) +
-               labs(x = "Time (years)", 
-                    y = "Change in comparison to the previous year (in percent)", 
-                    title = "Percental change"),
-             
-             ggplot(eutrophication_perc_change, aes(x=Year, y=Diff_amount, fill=factor(ifelse(Diff_amount <0, "positive", "negative")))) +
-               geom_col() +
-               theme_minimal() +
-               scale_fill_manual(guide = FALSE, name = "Type of change", values=c("darkslategray3","darkslategray")) +
-               xlim(1982, 2020) +
-               ylim(-10, 10) + 
-               labs(x = "Time (years)", 
-                    y = "Change (in %)", 
-                    title = "Total change"), nrow = 1, top = "Increase and decline of eutrophication in rivers of Germany 1982-2018")
-```
-
-By presenting the data in the other graphs, the developments of water quality classes III, III-IV and IV can be named with a clear positive trend towards attainment of 0.00% eutrophication in 2030.
+By presenting the data in this graphs, the developments of water quality classes III, III-IV and IV can be named with a clear positive trend towards attainment of 0.00% eutrophication in 2030.
 
 The data can be used to forecast trends towards the 0.00% eutrophication target. However, it should be noted that the prediction cannot be considered complete, as there are many more factors involved in reducing eutrophication. 
 
@@ -658,58 +560,66 @@ The first calculation shows the decrease in eutrophication from 1982 - 2018. The
 ```{r}
 `df_Total eutrophication` %>% 
   select(Year, Total) %>%
-  filter(Year == "1985" | Year == "2000")
+  filter(Year == "1982" | Year == "2000")
 ```
 
 ```{r}
-label_percent(scale = 1)(((71.2 / 90.1 * 100) - 100))
+label_percent(scale = 1)(((71.2 / 86.4 * 100) - 100))
 ```
 
 ```{r}
 `df_Total eutrophication` %>% 
   select(Year, Total) %>%
-  filter(Year == "2000" | Year == "2015")
+  filter(Year == "2000" | Year == "2018")
 ```
 
 ```{r}
-label_percent(scale = 1)(((69.4 / 71.2 * 100) - 100))
+label_percent(scale = 1)(((55.7 / 71.2 * 100) - 100))
 ```
-The decrease in eutrophication was 21% from 1985 - 2000 and only 3% in the following 15 years. This results in an average decrease in eutrophication of 0.8% per year for this period of 30 years.  
+The decrease in eutrophication was -18% from 1982 - 2000 and -22% in the following 18 years. This results in an average decrease in eutrophication of 1.1% per year for this period of 36 years.  
 
 ```{r}
-"Decreas per Year" <- (24/30)
+"Decreas per Year" <- (40/36)
 view(`Decreas per Year`)
 ```
 
-For the next 15 years, if eutrophication continues to decrease, this would mean another 12% decrease. Conversely, based on these data, this would mean that in 2030 the water bodies would still be up to 52% eutrophicated. So the target of 0.00% would have been missed.
+For the next 12 years, if eutrophication continues to decrease, this would mean another 13.2% decrease. Conversely, based on these data, this would mean that in 2030 the water bodies would still be up to 46.8% eutrophicated. So the target of 0.00% would have been missed.
 
+The total eutrophication data were calculated by changing the percentages, i.e. the respective increase or decrease in eutrophication.On the one hand the increase and decrease between the years in percent and on the other hand the total change from 1982 - 2018 were considered. Both diagrams should visualize the change again and make it more clearly visible. 
 
-
-
-### **Step 2: The Comparison**
 
 ```{r}
-df_perc_change <- left_join(phos_perc_change, nitr_perc_change, by = "Year")
-df_perc_change <- left_join(df_perc_change, eutrophication_perc_change, by = "Year")
+eutrophication_perc_change <- `df_Total eutrophication` %>%
+  mutate(Diff_amount = `Total eutrophication` - lag(`Total eutrophication`),
+    Perc_change = (`Total eutrophication` - lag(`Total eutrophication`)) / lag(`Total eutrophication`))
+eutrophication_perc_change <- drop_na(eutrophication_perc_change) 
+View(eutrophication_perc_change)
 ```
 
-```{r}
-ggplot() + geom_line(aes(x = Year, y = Perc_change.x), size = 0.8, color = "mediumaquamarine", data = df_perc_change) + 
-  geom_line(aes(x = Year, y = Perc_change.y), size = 0.8, color = "coral", data = df_perc_change) +
-  geom_line(aes(x = Year, y = Perc_change), size = 0.8, color = "blueviolet", data = df_perc_change) +
-  labs(title = "Percentage change 2001-2019", subtitle = "green = phosphate, orange = nitrogen, purple = eutrophication", x = "Year", y = "Percantage change") +
-  scale_y_continuous(labels = scales::percent) +
-  scale_x_continuous(breaks=seq(2001,2019,2)) +
-  theme_minimal()
-```
 
 ```{r}
-ggplot() + 
-  geom_bar(aes(x = Year, y = Perc_change.x), stat="identity", width=0.7, fill="mediumaquamarine", position = "dodge", data = df_perc_change) +
-  geom_bar(aes(x = Year, y = Perc_change.y), stat="identity", width=0.7, fill="coral", position = "dodge", data = df_perc_change) +
-  geom_bar(aes(x = Year, y = Perc_change), stat="identity", width=0.7, fill="blueviolet", position = "dodge", data = df_perc_change) +
-  theme_minimal()
+grid.arrange(ggplot(eutrophication_perc_change, aes(x=Year, y=Perc_change, fill=factor(ifelse(Perc_change <0, "positive", "negative")))) +
+               geom_col() +
+               theme_minimal() +
+               scale_fill_manual(guide = FALSE, name = "Type of change", values=c("goldenrod1","darkslateblue")) +
+               scale_y_continuous(labels = scales::percent) +
+               xlim(1982, 2020) +
+               labs(x = "Time (years)", 
+                    y = "Change in comparison to the previous year (in percent)", 
+                    title = "Percentage change"),
+             
+             ggplot(eutrophication_perc_change, aes(x=Year, y=Diff_amount, fill=factor(ifelse(Diff_amount <0, "positive", "negative")))) +
+               geom_col() +
+               theme_minimal() +
+               scale_fill_manual(guide = FALSE, name = "Type of change", values=c("goldenrod1","darkslateblue")) +
+               xlim(1982, 2020) +
+               ylim(-10, 10) + 
+               labs(x = "Time (years)", 
+                    y = "Change (in %)", 
+                    title = "Total change"), nrow = 1, top = "Increase and decline of eutrophication in rivers of Germany 1982-2018")
 ```
+
+
 ## **Discussion**
 
 The data show a trend of reduction of phosphate and nitrate inputs into the ecosystem of water bodies. This in turn has a positive effect on the eutrophication in water bodies and their condition. With the exclusive consideration of these data the analysis comes to the conclusion that a decrease until 2030 of the phosphate values up to 0.0 % is possible. For nitrate inputs, a reduction of 37.5% is possible according to the current approach. However, it was already mentioned at the beginning of the work that not only agriculture is involved in the input of nitrate and phosphate, but also other carriers such as industry and municipal wastewater treatment plants. In recent years, the latter have significantly reduced their nutrient inputs to water bodies, whereas agriculture has remained relatively constant. (Taube et al. 2020. P. 7f.) The improvement in water quality could therefore also be attributed to the reduction in municipal wastewater treatment plants and less to the measures in agriculture. 
