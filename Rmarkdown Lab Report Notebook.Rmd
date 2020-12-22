@@ -688,6 +688,28 @@ For the next 15 years, if eutrophication continues to decrease, this would mean 
 
 ### **Step 2: The Comparison**
 
+```{r}
+df_perc_change <- left_join(phos_perc_change, nitr_perc_change, by = "Year")
+df_perc_change <- left_join(df_perc_change, eutrophication_perc_change, by = "Year")
+```
+
+```{r}
+ggplot() + geom_line(aes(x = Year, y = Perc_change.x), size = 0.8, color = "mediumaquamarine", data = df_perc_change) + 
+  geom_line(aes(x = Year, y = Perc_change.y), size = 0.8, color = "coral", data = df_perc_change) +
+  geom_line(aes(x = Year, y = Perc_change), size = 0.8, color = "blueviolet", data = df_perc_change) +
+  labs(title = "Percentage change 2001-2019", subtitle = "green = phosphate, orange = nitrogen, purple = eutrophication", x = "Year", y = "Percantage change") +
+  scale_y_continuous(labels = scales::percent) +
+  scale_x_continuous(breaks=seq(2001,2019,2)) +
+  theme_minimal()
+```
+
+```{r}
+ggplot() + 
+  geom_bar(aes(x = Year, y = Perc_change.x), stat="identity", width=0.7, fill="mediumaquamarine", position = "dodge", data = df_perc_change) +
+  geom_bar(aes(x = Year, y = Perc_change.y), stat="identity", width=0.7, fill="coral", position = "dodge", data = df_perc_change) +
+  geom_bar(aes(x = Year, y = Perc_change), stat="identity", width=0.7, fill="blueviolet", position = "dodge", data = df_perc_change) +
+  theme_minimal()
+```
 ## **Discussion**
 
 The data shows a trend of reduction of phosphate and nitrogen inputs into the ecosystem of water bodies (variable XXXX), which in turn has a positive effect on the eutrophication in water bodies and their condition (variable XXX). With the exclusive consideration of these data the analysis comes to the conclusion that a decrease until 2030 of the phosphate values up to .... % is possible. For nitrogen inputs, a reduction of ... % is possible according to the current approach. However, it was already mentioned at the beginning of the work that not only agriculture is involved in the input of nitrogen and phosphate, but also other carriers such as industry and communal wastewater treatment plants. The latter have accomplished a significant reduction in their nutrient inputs to water bodies in recent years, whereas agriculture has remained relatively the same. (Taube et al. 2020. P. 7f.) The improvement in water quality could therefore also be attributed to the reduction in municipal wastewater treatment plants and less to the measures in agriculture.
