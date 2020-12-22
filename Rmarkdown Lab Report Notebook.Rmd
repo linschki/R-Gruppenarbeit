@@ -161,7 +161,7 @@ phos_perc_change <- drop_na(phos_perc_change) # deletes all the row we don't nee
 View(phos_perc_change)
 ```
 
-We also wanted to visualize this , so next we made two graphs to show both the percental change, as well as the total amount that had changed as compared to the value of the previous year.
+We also wanted to visualize this , so next we made two graphs to show both the percentage change, as well as the total amount that had changed as compared to the value of the previous year.
 ```{r}
 grid.arrange(ggplot(phos_perc_change, aes(x=Year, y=Perc_change, fill=factor(ifelse(Perc_change <0, "positive", "negative")))) +
                geom_col() +
