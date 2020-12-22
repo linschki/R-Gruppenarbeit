@@ -183,7 +183,7 @@ grid.arrange(ggplot(phos_perc_change, aes(x=Year, y=Perc_change, fill=factor(ife
                     y = "Change (in one thousand tons of plant nutrient)", 
                     title = "Total change"), nrow = 1, top = "Increase and decline of phospate fertilizer use in Germany 2000-2019")
 ```
-The sharp decline between the years 2007 and 2008 is clearly visible. From the graph showing the total change it can be seen that the amount of phosphate used in 2008 reduced by almost 200,000 tonnes, which corresponds to a decline of over 40 % as seen from the percental change graph.
+The sharp decline between the years 2007 and 2008 is clearly visible. From the graph showing the total change it can be seen that the amount of phosphate used in 2008 reduced by almost 200,000 tonnes, which corresponds to a decline of over 40 % as seen from the percentage change graph.
 
 To finish off our analysis of our data on phosphate by itself, we wanted to see how the consumption of phosphate had changed in total over the course of time, expressed in percent.
 ```{r}
