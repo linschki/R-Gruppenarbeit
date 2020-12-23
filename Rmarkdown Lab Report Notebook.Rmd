@@ -271,7 +271,7 @@ From 1991 to 2009 the development of the data shows a rather decreasing tendency
 whereas since 2009 there is no continous tendency of a decrase of nitrogen use but its rather fluctuating. In 2008
 we find the lowest amount of nitrogen used in agriculture in the timespan data was collected. However, since then
 the data shows a high increase over 2 years to 107 kg per hectar, a decrease to almost minimum amount of nitrogen
-as in 2009 and an increase again from 85 in 2014 to 103 in 2018. A general tendency of a decreasing use of nitrogen
+as in 2009 and an increase again from 85 kg in 2014 to 103 kg in 2018. A general tendency of a decreasing use of nitrogen
 in agriculture can be formulated, but not a linear decrease. To better evaluate the development we plottet a line
 graph of the time from 2000 to 2018.
 
@@ -294,7 +294,7 @@ nitrogen consumption can be analized. Since then, mentionable de- and inclines f
 can be seen. The graph illustrates a mentionable peak in 2011 with 107 kg per hectar compared to the years
 before and after with 83 kg per hectar in 2008 and three years later in 2014 with 85 kg nitrogen per hectar.
 For that time period no trend of de- or incline of nitrogen use can be seen. Afterall, from 2015 nitrogen
-consumption decreases continuasly to 2019, from 103 to 89 kg nitrogen per hectar.
+consumption decreases continuasly to 2019, from 103 kg to 89 kg nitrogen per hectar.
 
 We built another table with an extra column for the changing amount of nitrogen from year to year and another
 column for the percentage change of nitrogen from year to year by using the lag-function. We limited the table
