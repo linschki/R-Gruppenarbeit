@@ -24,36 +24,35 @@ body {
 
 ## **Introduction**
 
-This report deals with the impacts of phosphate and nitrogen fertilizers used in agriculture and their effect on the terrestrial and hydrological ecosystem. Increased inputs of nitrogen and phosphate cause eutrophication in water bodies, both marine and freshwater. The term eutrophication describes a process in which an ecosystem is brought out of balance by an oversupply of nutrients. This triggers an increased growth of single-celled algae in the water bodies, which are mainly found in the upper, light-flooded water layers. As a result of the increasing algae biomass, fewer light can penetrate the surface layers and reach other plants and living organisms further down. Additionally, algae have relatively short life-cycles meaning that soon after dead algae biomass accumulates and sinks to the ground. The subsequent decomposition of the dead algae consumes a lot of oxygen making the conditions for the other organisms even more hostile. Starved of light and oxygen, more and more species start to die, depending on their tolerance to the changing habitat conditions. Ultimately this process can lead to a significant biodiversity loss in the given ecosystem. While in a healthy ecosystem, the nutrient supply would regulate the amount of algae present, eutrophication thus describes a scenario in which an excessive nutrient input leads to a single cell algal bloom, which causes the loss of biodiversity and a significant oxygen deficiency in water bodies (Umweltbundesamt. 2020).
+This report deals with the impacts of phosphate and nitrogen fertilizers used in agriculture and their effect on aquatic ecosystems. Increased inputs of nitrogen and phosphate cause eutrophication in water bodies, both marine and freshwater. The term eutrophication describes a process in which an ecosystem is brought out of balance by an oversupply of nutrients. This triggers an increased growth of single-celled algae in the water bodies, which are mainly found in the upper, light-flooded water layers. As a result of the increasing algae biomass, fewer light can penetrate the surface layers and reach other plants and living organisms further down. Additionally, algae have relatively short lifespans meaning that soon dead algae biomass accumulates and sinks to the ground. The subsequent decomposition of the dead algae consumes a lot of oxygen making the conditions for the other organisms even more hostile. Starved of light and oxygen, more and more species start to die, depending on their tolerance to the changing habitat conditions. Ultimately this process can lead to a significant loss of biodiversity in the given ecosystem. While in a healthy ecosystem, nutrient supply would regulate the amount of algae present, eutrophication thus describes a scenario in which an excessive nutrient input leads to a single cell algal bloom, which causes the loss of biodiversity and a significant oxygen deficiency in water bodies (Umweltbundesamt. 2020).
 
-The input of these excess nutrients usually stems from agriculture, communal wastewater treatment facilities and the industrial sector. However, the input from agriculture represents the largest share. Agriculture uses nitrogen fertilizers to fertilize its lands, which are responsible for 90% of the nitrogen introduced to groundwater (Taube et al. 2020. P. 7). Agriculture is also the leading cause for phosphate input into water bodies. Other areas, such as municipal wastewater treatment plants, were able to reduce their phosphate input over the past decades (Ibid.).
+The input of these excess nutrients usually stems from agriculture, communal wastewater treatment facilities and the industrial sector. However, the input from agriculture represents the largest share. Agriculture uses nitrogen fertilizers to fertilize its lands, which are responsible for 90% of the nitrogen introduced to groundwater (Taube et al. 2020. p. 7). Agriculture is also the leading cause for phosphate input into water bodies. Other areas, such as municipal wastewater treatment plants, were able to reduce their phosphate input over the past decades (Ibid.).
 
-The consequences of eutrophication make it clear the immediate action against water pollution is required, a task which is supervised by the Water Protection Directive of the European Union. However, it is the federal government which has the tools for direct action and is thus responsible to combat water pollution on a national level, including ensuring a reduction of phosphorus and nitrogen input to protect water ecosystems. 
+The consequences of eutrophication make it clear the immediate action against water pollution is required, a task which is supervised by the Water Protection Directive of the European Union. However, it is the federal government which has the tools for direct action and is thus responsible to combat water pollution on a national level, including ensuring a reduction of phosphate and nitrogen input to protect water ecosystems.
 
-Since eutrophication of water bodies is such an important topic the state of different water bodies in Germany is constantly being observed and data on the trends over the past years is easily available. Additionally, data on the use of nitrogen and phosphate fertilizers in the german agricultural sector can also be accessed. Since the links between fertilizer use in agriculture and excessive nutrient input into water ecosystems is well documented and understood in the scientific literature, the goal of this report is to see if such correlations can also be observed when looking just at already available datasets. The analysis is thus structured into two steps, in the first step three different datasets on fertilizer use and water eutrophication are considered separately and the trends of their individual developments are visualized. In the second step the datasets are combined and compared with one another. Since two of the datasets also include a target value which is to be reached by 2030, the analysis also takes a look at the overall development over the past years and compares this to what is required in order to reach the 2030 target. Thus, a conclusion can be made on whether or not the given target can be reached if the trends of the past decades are continued at the same rate.
+Since eutrophication of water bodies is such an important topic the state of different water bodies in Germany is constantly being observed and data on the trends over the past years is easily available. Additionally, data on the use of nitrogen and phosphate fertilizers in the German agricultural sector can also be accessed. Since the links between fertilizer use in agriculture and excessive nutrient input into water ecosystems is well documented and understood in the scientific literature, the goal of this report is to see if such correlations can also be observed when looking just at already available data sets. The analysis is thus structured into two steps, in the first step three different data sets on fertilizer use and water eutrophication are considered separately and the trends of their individual developments are visualized. In the second step the data sets are combined and compared with one another. Since one of the data sets also includes a target value which is to be reached by 2030, the analysis also takes a look at the overall development over the past years and compares this to what is required in order to reach the 2030 target. Thus, a conclusion can be made on whether or not the given target can be reached if the trends of the past decades are continued at the same rate.
 
 ## **About the Data**
 
-Two datasets used in this analysis are taken from the website of the German Federal Environmental Agency. The third dataset is from Eurostat. The Federal Environmental Agency collects data on the environment in Germany, covering a wide range of topics from waste management to climate change. The Federal Environmental Agency collects the data, researches the interrelationships and enables forecasts to be made for the future. In addition, the FEA also provides an interface between the law and the implementation of laws. Accompanying laws into practice is thus another one of the office's responsibilities (Umweltbundesamt, 2018).
+Two data sets used in this analysis are taken from the website of the German Federal Environmental Agency (FEA). The third data set is from Eurostat. The Federal Environmental Agency collects data on the environment in Germany, covering a wide range of topics from waste management to climate change. The Federal Environmental Agency collects the data, researches the interrelationships, and enables forecasts to be made for the future. In addition, the FEA also provides an interface between the law and the implementation of laws. Accompanying laws into practice is thus another one of the office's responsibilities (Umweltbundesamt, 2018).
 
-Eurostat, as the statistical office of the European Union, is the source for the dataset on phosphate fertilizers and their use in Germany. The agency's mission is to provide high quality statistics and data on Europe in cooperation with national offices. (eurostat n.d.)
+Eurostat, as the statistical office of the European Union, is the source for the data set on phosphate fertilizers and their use in Germany. The agency's mission is to provide high quality statistics and data on Europe in cooperation with national offices (eurostat n.d.).
 
-The data used in this work mainly consider the environmental impacts of specific substances namely phosphate and nitrogen on the environment, specifically on hydrological systems, looking at the annual evolution over a period of time. The aim of the work is to put the different data in context and to provide a possible forecast for the year 2030. However, it should be noted that any forecast that is made here is only made in direct relation to the limited available data from the examined datasets, so that there can be no claim of completeness or accuracy of the forecast, since in a real-world setting many other factors are at play.
+The data used in this work mainly consider the environmental impacts of specific substances namely phosphate and nitrogen on the environment, specifically on hydrological systems, looking at the annual evolution over a period of time. The aim of the work is to put the different data in context and to provide a possible forecast for the year 2030. However, it should be noted that any forecast that is made here is only made in direct relation to the limited available data from the examined data sets, so that there can be no claim of completeness or accuracy of the forecast, since in a real-world setting many other factors are at play.
 
-In this work the following datasets are compared with each other: Sampling sites which exceed the requirement for positive status for total phosphorus in rivers, nitrogen surplus of the national farm-gate balance and an overview of the annual use of phosphate fertilizer in Germany. The datasets used show data from different points in time, therefore in the first step of the analysis the individual datasets are considered alone. Only in the second step of the analysis the data are merged and compared and there only from the common years.
+In this work the following data sets are compared with each other: Sampling sites which exceed the requirement for positive status for total phosphorus in rivers, nitrogen surplus of the national farm-gate balance and an overview of the annual use of phosphate fertilizer in Germany. The data sets used show data from different points in time, therefore in the first step of the analysis the individual data sets are considered alone. Only in the second step of the analysis the data are merged and compared and there only for the time span they have in common.
 
 ## **Research Focus**
 
-This work is concerned with the development of nitrogen and phosphorus inputs. In this sense, the consequences of the input are considered and a forecast is made for the coming years until 2030. Thereby this work tries to model the development of the eutrophication until 2030 on the basis of the different data sets. The research interest focuses on the past years and the possible development until 2030, with a special focus on where further action is needed to get to the reduction targets and by how much the input still has to decrease.  
+This work is concerned with the development of nitrogen and phosphorus inputs. In this sense, the consequences of the input are considered, and a forecast is made for the coming years until 2030. Thereby this work tries to model the development of the eutrophication until 2030 on the basis of the different data sets. The research interest focuses on the past years and the possible development until 2030, with a special focus on where further action is needed to get to the reduction targets and by how much the input still has to decrease.
 
-## **Reasearch design**
+## **Research Design**
 
-In the interest of nature conservation our interest is to see in which way the development of eutrophication of ecosystems and the usage of nitrogen and phosphate fertilizers in Germany are interrelated. Despite regulations on the usage of too much fertilizers than necessary the disbalance of nutrients and their functions in aquatic ecosystems are still visible and take long to recover. 
-Therefore it is difficult too say if regulations on the usage of fertilzers have an direct impact on ecosystems. To see both the development of eutrophication levels and the amount of fertilizer used in Germany we took accessible data from the Federal Environment Agency and Eurostat. We looked at phosphate and nitrogen usage in agriculture and the development of different water quality classes. To get an overview we transfered all our data in one table in R, and then looked at summary data of each section, meaning max, min, mean and median values. For each dataset we built barplot and line graphs to see the development over the years and further looked on years with striking values compared by previos years, by looking at percentage and total change from year to year. Lastly we compare the development of our datasets in percentage change in one graph to discuss if the development interrelates or if similar trends can be found. In the datasets of the Federal Environment Agency targets for the year 2030 are presented which is determined by the sustainability strategy from 2016 (Umweltbundesamt, 2020). With that we finally try to make a statement if this goal can be reached based on the data we analyzed. The interpretation of the data does not include other factors like the current development and discussions on environmental and agricultural policies. The focus lays on the interpretation of the chosen data only.
+In the interest of nature conservation our interest is to see in which way the development of eutrophication of ecosystems and the usage of nitrogen and phosphate fertilizers in Germany are interrelated. Despite regulations on the usage of more fertilizers than necessary the imbalance of nutrients and their functions in aquatic ecosystems are still visible and take long to recover. Therefore, it is difficult to say if regulations on the usage of fertilizers have a direct impact on ecosystems. To see both the development of eutrophication levels and the amount of fertilizer used in Germany we took accessible data from the Federal Environment Agency and Eurostat. We looked at phosphate and nitrogen usage in agriculture and the development of different water quality classes. To get an overview we transferred all our data in one table in R, and then looked at summary data of each section, meaning max, min, mean and median values. For each data set we built bar plots and line graphs to see the development over the years and further looked on years with striking values compared to previous years, by looking at percentage and total change from year to year. Lastly, we compare the development of our data sets in percentage change in one graph to discuss if the development interrelates or if similar trends can be found. In the data sets of the Federal Environment Agency targets for the year 2030 are presented which is determined by the sustainability strategy from 2016 (Umweltbundesamt, 2020). With that we finally try to make a statement whether this goal can be reached based on the data we analyzed. The interpretation of the data does not include other factors like the current development and discussions on environmental and agricultural policies. The focus lays on the interpretation of the chosen data only.
 
 ## **The Analysis**
 
-Our data analysis technically started before we even imported our datasets into RStudio for the first time. As you can see in the *data_raw* folder, the original files include a lot of additional information and explanations on the data, which get in the way when importing them into RStudio directly. We therefore cleaned the datasets up a little in Excel to include just the needed values. The clean datasets, as well as a merged dataframe of all our datasets can be found in *data_clean*.
+Our data analysis technically started before we even imported our data sets into RStudio for the first time. As you can see in the *data_raw* folder, the original files include a lot of additional information and explanations on the data, which get in the way when importing them into RStudio directly. We therefore cleaned the data sets up a little in Excel to include just the needed values. The clean data sets, as well as a merged data frame of all our data sets can be found in *data_clean*.
 
 ### **Getting started with RMarkdown**
 
@@ -67,7 +66,7 @@ We began by loading all our required R packages:
     library(dplyr)
 ```
 
-And then importing the clean datasets from our folder:
+And then importing the clean data sets from our folder:
 
 ```{r}
 library(readxl)
@@ -90,7 +89,7 @@ View(nitrogen_agri)
 View(phosphate_agri)
 ```
 
-As you can see the three tables all differ in number of columns and in the time span they cover. To get a more organized starting point for our further data analysis. For this purpose we joined all three imported datasets into one overall dataframe. We used the year dates column of the **eutrophication_rivers** to join them by as a time scale is something all three datasets have in common and the eutrophication measurements have the most extensive time scale. We used the dplyr approach and left_join function to combine our datasets, in order to keep rows even if some of the datasets were missing values for a given year.
+As you can see the three tables all differ in number of columns and in the time span they cover. To get a more organized starting point for our further data analysis. For this purpose, we joined all three imported data sets into one overall data frame. We used the year dates column of the *eutrophication_rivers* to join them by as a time scale is something all three data sets have in common and the eutrophication measurements have the most extensive time scale. We used the dplyr approach and left_join function to combine our data sets, in order to keep rows even if some of the data sets were missing values for a given year.
 
 ```{r}
 df <- left_join(eutrophication_rivers, nitrogen_agri, by = "Jahr")
@@ -98,12 +97,11 @@ df <- left_join(df, phosphate_agri, by = "Jahr")
 View(df)
 ```
 
-This concluded our preparation and we continued with the data analysis. To avoid everyone having to merge their dataset themselves to get the big dataframe for the analysis, a Excel version of the full dataframe can also be found in *data_clean*.
+This concluded our preparation and we continued with the data analysis. To avoid everyone having to merge their data set themselves to get the big data frame for the analysis, an Excel version of the full data frame can also be found in *data_clean*.
 
 ### **Step 1: Phosphate, Nitrogen, and Eutrophication, respectively**
 
-Step one of our data analysis looks at the individual types of data i.e. how phosphate and nitrogen use in agriculture developed over time, as well as how river eutrophication changed over time.
-
+Step one of our data analysis looks at the individual types of data i.e., how phosphate and nitrogen use in agriculture developed over time, as well as how river eutrophication changed over time.
 
 #### Phosphate
 
@@ -142,7 +140,7 @@ ggplot(data=df_phosphate, aes(x=Year, y=Phosphate_use)) +
   ylab("Consumption in one thousand tons of plant nutrient")
 ```
 
-As seen in the summary earlier, the maximum amount of phosphate was a little over 1,000,000 tonnes, used in 1985. The bar graph further illustrates that in the 5-year intervals between 1985 and 2000 the amount of phosphate used reduced in each of the years where data was available compared to the datapoint from five years before. However, in the timespan between the years 2000 and 2019 the reduction was not as continually. To take a closer look at this timespan we plotted a line graph covering the years 2000 to 2019.
+As seen in the summary earlier, the maximum amount of phosphate was a little over 1,000,000 tonnes, used in 1985. The bar graph further illustrates that in the 5-year intervals between 1985 and 2000 the amount of phosphate used reduced in each of the years where data was available compared to the datapoint from five years before. However, in the time span between the years 2000 and 2019 the reduction was not as continually. To take a closer look at this time span we plotted a line graph covering the years 2000 to 2019.
 
 ```{r}
 df_phosphate %>% 
@@ -156,9 +154,11 @@ df_phosphate %>%
   xlim(2000, 2020) +
   ylim(100, 400)
 ```
-Again it can be seen that overall, the amount of phosphate fertilizers consumed each year declined. Especially in 2008 the consumption slumped. This is the minimum of 147,000 tonnes as already seen in the summary earlier. However, there has been a sharp rise in consumption in the two years that followed. And after a period of decline another rise which reached a value of around 300,000 tonnes in 2014. Since 2014, the consumption of phosphate fertilizers went down again, reaching 211,000 tonnes in 2018 and 2019.
 
-We then made a new table and added a column on the amount of phosphate which was used more or less in comparison to the previous year and another column with the change in percent this corresponds to using the lag-function. We limited the table to the years 2001-2019 as this is the time frame for which the phosphate table has continous annual data, which is needed to assess the change in comparison to the previous year by dropping all rows which contained empty cells.
+Again, it can be seen that overall, the amount of phosphate fertilizers consumed each year declined. Especially in 2008 the consumption slumped. This is the minimum of 147,000 tonnes as already seen in the summary earlier. However, there has been a sharp rise in consumption in the two years that followed. And after a period of decline another rise which reached a value of around 300,000 tonnes in 2014. Since 2014, the consumption of phosphate fertilizers went down again, reaching 211,000 tonnes in 2018 and 2019.
+
+We then made a new table and added a column on the amount of phosphate which was used more or less in comparison to the previous year and another column with the change in percent this corresponds to using the lag-function. We limited the table to the years 2001-2019 as this is the time frame for which the phosphate table has continuous annual data, which is needed to assess the change in comparison to the previous year by dropping all rows which contained empty cells.
+
 ```{r}
 phos_perc_change <- df_phosphate %>%
   mutate(
@@ -168,7 +168,8 @@ phos_perc_change <- drop_na(phos_perc_change) # deletes all the row we don't nee
 View(phos_perc_change)
 ```
 
-We also wanted to visualize this , so next we made two graphs to show both the percentage change, as well as the total amount that had changed as compared to the value of the previous year.
+We also wanted to visualize this, so next we made two graphs to show both the percentage change, as well as the total amount that had changed as compared to the value of the previous year.
+
 ```{r}
 grid.arrange(ggplot(phos_perc_change, aes(x=Year, y=Perc_change, fill=factor(ifelse(Perc_change <0, "positive", "negative")))) +
                geom_col() +
@@ -178,7 +179,7 @@ grid.arrange(ggplot(phos_perc_change, aes(x=Year, y=Perc_change, fill=factor(ife
                xlim(2000, 2020) +
                labs(x = "Time (years)", 
                     y = "Change in comparison to the previous year (in percent)", 
-                    title = "Percental change"),
+                    title = "Percentage change"),
              
              ggplot(phos_perc_change, aes(x=Year, y=Diff_amount, fill=factor(ifelse(Diff_amount <0, "positive", "negative")))) +
                geom_col() +
@@ -190,19 +191,25 @@ grid.arrange(ggplot(phos_perc_change, aes(x=Year, y=Perc_change, fill=factor(ife
                     y = "Change (in one thousand tons of plant nutrient)", 
                     title = "Total change"), nrow = 1, top = "Increase and decline of phospate fertilizer use in Germany 2000-2019")
 ```
+
 The sharp decline between the years 2007 and 2008 is clearly visible. From the graph showing the total change it can be seen that the amount of phosphate used in 2008 reduced by almost 200,000 tonnes, which corresponds to a decline of over 40 % as seen from the percentage change graph.
 
 To finish off our analysis of our data on phosphate by itself, we wanted to see how the consumption of phosphate had changed in total over the course of time, expressed in percent.
+
 ```{r}
 df_phosphate %>% 
   select(Year, Phosphate_use) %>%
   filter(Year == "1985" | Year == "2019")
 ```
-We did this by filtering for the phosphate values of our start and end year and inserting these values into a simple percentage equation. There is probably a more elegant solution for this in R, however, if there is we could not find it, or if we did did not understand what we were looking at. So, instead we dug deep trying to remember what we had learned in school about calculating with percentages and came up with this:
+
+We did this by filtering for the phosphate values of our start and end year and inserting these values into a simple percentage equation. There is probably a more elegant solution for this in R, however, if there is we could not find it, or if we did, did not understand what we were looking at. So, instead we dug deep trying to remember what we had learned in school about calculating with percentages and came up with this:
+
 ```{r}
 label_percent(scale = 1, accuracy = 0.01)(((211 / 1055 * 100) - 100))
 ```
-Which showed us that between the years 1985 and 2019 phosphate consumption for agricultural purposes declined by 80 %. But as we saw in the first bar chart on phosphate a large decline in consumption already took place before 2000 where only data for every fifth year is available. To take a closer look at the time frame of which we have continous data, we repeated the previous step for the years 2000-2019.
+
+Which showed us that between the years 1985 and 2019 phosphate consumption for agricultural purposes declined by 80 %. But as we saw in the first bar chart on phosphate a large decline in consumption already took place before 2000 where only data for every fifth year is available. To take a closer look at the time frame of which we have continuous data, we repeated the previous step for the years 2000-2019.
+
 ```{r}
 df_phosphate %>% 
   select(Year, Phosphate_use) %>%
@@ -212,30 +219,21 @@ df_phosphate %>%
 ```{r}
 label_percent(accuracy = 0.01, scale = 1)(((211 / 351 * 100) - 100))
 ```
-Showing that during this time the phosphate consumption dropped by around 40% in 2019 as compared to 2000.
 
+Showing that during this time the phosphate consumption dropped by around 40% in 2019 as compared to 2000.
 
 #### Nitrogen
 
-The Nitrogen column shows the overall agricultural nitrogen balance in Germany between 1990 and 2018 in relation to agricultural used land.
-The measuring unit here is kilograms of nitrogen per hectar agricultural used land in Germany (kilogram per hectar), which differs from the
-measurement of phosphate measured in 1.000 metric tons of plant nutrient.
-To start analizing the data of nitrogen the nitrogen column will be turned into it's own vector and the summary function is used to give a
-first overview of the data.
+The Nitrogen column shows the overall agricultural nitrogen balance in Germany between 1990 and 2018 in relation to agricultural used land. The measuring unit here is kilograms of nitrogen per hectare agricultural used land in Germany (kilogram per hectare), which differs from the measurement of phosphate measured in 1,000 metric tons of plant nutrient. To start analyzing the data of nitrogen the nitrogen column will be turned into its own vector and the summary function is used to give a first overview of the data.
 
 ```{r}
 Nitrogen <- df$Stickstoff_Jahreswert_LW
 summary(Nitrogen)
 ```
 
-The minimum amount of nitrogen used in agriculture in Germany was 83.0 kg per hectar
-and the maximum amount 141.0 kg per hectar. In addition one can see that the mean
-value is 103.2 kg per hectar while the median is 104.0 kg.
-For the further analysis of the nitrogen balance development over time we created
-a new table with just the nitrogen values and a timeline of the years in numeric values.
+The minimum amount of nitrogen used in agriculture in Germany was 83.0 kg per hectare and the maximum amount 141.0 kg per hectar. In addition, one can see that the mean value is 103.2 kg per hectare while the median is 104.0 kg. For the further analysis of the nitrogen balance development over time we created a new table with just the nitrogen values and a timeline of the years in numeric values.
 
 ```{r}
-timeline_numeric <- as.numeric(as.character(df$Jahr))
 df_nitrogen <- tibble(timeline_numeric, Nitrogen)
 df_nitrogen <- setNames(df_nitrogen, c("Year","Nitrogen_use"))
 view(df_nitrogen)
@@ -249,10 +247,7 @@ df_nitrogen %>%
   filter(Nitrogen_use == "83" | Nitrogen_use == "141")
 ```
 
-The maximum of nitrogen use was reached in 1990 with 141 kg per hectar and the minimum was found in 2009
-with 83 kg per hectar. This already implies a deacrease of nitrogen fertilizer used in agriculture from 1990 to 2009.
-However, it also shows that the values fluctuate since the minimum value is in 2009 and then went up again to 2018.
-To see the development of the values we started visualizing the data to get a better understanding.
+The maximum of nitrogen use was reached in 1990 with 141 kg per hectare and the minimum was found in 2009 with 83 kg per hectar. This already implies a decrease of nitrogen fertilizer used in agriculture from 1990 to 2009. However, it also shows that the values fluctuate since the minimum value is in 2009 and then went up again to 2018. To see the development of the values we started visualizing the data to get a better understanding.
 
 ```{r}
 ggplot(data=df_nitrogen, aes(x=Year, y=Nitrogen_use)) + 
@@ -260,20 +255,10 @@ ggplot(data=df_nitrogen, aes(x=Year, y=Nitrogen_use)) +
   theme_minimal() +
   ggtitle("Overall agricultural nitrogen balance in Germany 1990-2018") +
   xlab("Year") +
-  ylab("Consumption in kilogram per hectar in relation to agricultural used land")
+  ylab("Consumption in kilogram per hectare in relation to agricultural used land")
 ```
 
-As mentioned before, the maximum amount of nitrogen used in agriculture in Germany was found in the first year,
-data was collected for that purpose with 141 kg per hectar. Since then, the values decreased to 117 kg per hectar
-one year later. The tendency from that time on is a fluctuating deacrease of nitrogen use. There are three peak
-values in the years 2000 with 115 kg per hectar, 2011 with 107 kg per hectar and 2015 with 103 kg per hectar.
-From 1991 to 2009 the development of the data shows a rather decreasing tendency with slightly fluctuating values,
-whereas since 2009 there is no continous tendency of a decrase of nitrogen use but its rather fluctuating. In 2008
-we find the lowest amount of nitrogen used in agriculture in the timespan data was collected. However, since then
-the data shows a high increase over 2 years to 107 kg per hectar, a decrease to almost minimum amount of nitrogen
-as in 2009 and an increase again from 85 kg in 2014 to 103 kg in 2018. A general tendency of a decreasing use of nitrogen
-in agriculture can be formulated, but not a linear decrease. To better evaluate the development we plottet a line
-graph of the time from 2000 to 2018.
+As mentioned before, the maximum amount of nitrogen used in agriculture in Germany was found in the first year, data was collected for that purpose with 141 kg per hectare. Since then, the values decreased to 117 kg per hectare one year later. The tendency from that time on is a fluctuating decrease of nitrogen use. There are three peak values in the years 2000 with 115 kg per hectare, 2011 with 107 kg per hectare and 2015 with 103 kg per hectare. From 1991 to 2009 the development of the data shows a rather decreasing tendency with slightly fluctuating values, whereas since 2009 there is no continuous tendency of a decrease of nitrogen use but its rather fluctuating. In 2008 we find the lowest amount of nitrogen used in agriculture in the time span data was collected. However, since then the data shows a high increase over 2 years to 107 kg per hectare, a decrease to almost minimum amount of nitrogen as in 2009 and an increase again from 85 kg in 2014 to 103 kg in 2018. A general tendency of a decreasing use of nitrogen in agriculture can be formulated, but not a linear decrease. To better evaluate the development we plotted a line graph of the time from 2000 to 2018.
 
 ```{r}
 df_nitrogen %>% 
@@ -288,18 +273,9 @@ df_nitrogen %>%
   ylim(50, 150)
 ```
 
-The line graph visualizes a generall decline of nitrogen consumption in german agriculture from 1990-2018.
-Especially from 1990 to 2008 a clear decrease with few fluctuations of higher values in 1995 and 2000 of
-nitrogen consumption can be analized. Since then, mentionable de- and inclines from the time period 2008-2015
-can be seen. The graph illustrates a mentionable peak in 2011 with 107 kg per hectar compared to the years
-before and after with 83 kg per hectar in 2008 and three years later in 2014 with 85 kg nitrogen per hectar.
-For that time period no trend of de- or incline of nitrogen use can be seen. Afterall, from 2015 nitrogen
-consumption decreases continuasly to 2019, from 103 kg to 89 kg nitrogen per hectar.
+The line graph visualizes a general decline of nitrogen consumption in German agriculture from 1990-2018. Especially from 1990 to 2008 a clear decrease with few fluctuations of higher values in 1995 and 2000 of nitrogen consumption can be analyzed. Since then, mentionable de- and inclines from the time period 2008-2015 can be seen. The graph illustrates a mentionable peak in 2011 with 107 kg per hectare compared to the years before and after with 83 kg per hectare in 2008 and three years later in 2014 with 85 kg nitrogen per hectare. For that time period no trend of de- or incline of nitrogen use can be seen. Afterall, from 2015 nitrogen consumption decreases continuously to 2019, from 103 kg to 89 kg nitrogen per hectare.
 
-We built another table with an extra column for the changing amount of nitrogen from year to year and another
-column for the percentage change of nitrogen from year to year by using the lag-function. We limited the table
-to the years 1991-2018, as only in this time period we have continous data, which is needed for the percentage
-change of nitrogen to previous years. All other cells are ignored with this step.
+We built another table with an extra column for the changing amount of nitrogen from year to year and another column for the percentage change of nitrogen from year to year by using the lag-function. We limited the table to the years 1991-2018, as only in this time period we have continuous data, which is needed for the percentage change of nitrogen to previous years. All other cells are ignored with this step.
 
 ```{r}
 nitr_perc_change <- df_nitrogen %>%
@@ -310,8 +286,7 @@ nitr_perc_change <- drop_na(nitr_perc_change) # deletes all the row we don't nee
 View(nitr_perc_change)
 ```
 
-In the next step this table is also visualized in two graphs, with both the percantage change and the total
-amount of nitrogen use differing from one year to another. 
+In the next step this table is also visualized in two graphs, with both the percentage change and the total amount of nitrogen use differing from one year to another.
 
 ```{r}
 grid.arrange(ggplot(nitr_perc_change, aes(x=Year, y=Perc_change, fill=factor(ifelse(Perc_change<0, "positive", "negative")))) +
@@ -335,15 +310,9 @@ grid.arrange(ggplot(nitr_perc_change, aes(x=Year, y=Perc_change, fill=factor(ife
                     nrow = 1, top = "Increase and decline of overall agricultural nitrogen balance in Germany 2000-2018")
 ```
 
-With that visualization the first increase of nitrogen fertilizer compared to previous years can be seen in 1995.
-Here again the most striking part becomes visible again in 2009 with a percentage change of about -18.6% to the
-previous year and the following percantage change of 9.6% in 2010. Hereafter, in 2011 the percentage change is
-even higher with a positive change of +17.6% compared to the year before. This underlines the fluctuation in this
-time, as analized in the graph before. With the graph showing the total change one can see that the difference from
-2008 to 2009 with -19 kg differnece and from 2014 to 2015 with 18 kg difference the highest is the most striking.
+With that visualization the first increase of nitrogen fertilizer compared to previous years can be seen in 1995. Here again the most striking part becomes visible again in 2009 with a percentage change of about -18.6% to the previous year and the following percentage change of 9.6% in 2010. Hereafter, in 2011 the percentage change is even higher with a positive change of +17.6% compared to the year before. This underlines the fluctuation in this time, as analyzed in the graph before. With the graph showing the total change one can see that the difference from 2008 to 2009 with -19 kg difference and from 2014 to 2015 with 18 kg difference the highest is the most striking.
 
-To finilize our analysis of the data on the overall agricultural nitrogen balance in Germany, we wanted to show the
-total percentage change over the whole timeperiod data on nitrogen use in agriculture was collected.
+To finalize our analysis of the data on the overall agricultural nitrogen balance in Germany, we wanted to show the total percentage change over the whole time period data on nitrogen use in agriculture was collected.
 
 ```{r}
 df_nitrogen %>% 
@@ -351,19 +320,19 @@ df_nitrogen %>%
   filter(Year == "1990" | Year == "2018")
 ```
 
-We did this by filtering out the nitrogen values of the starting and final year and inserting these values into
-the percantage equation we already came up with for the phosphate analysis.
+We did this by filtering out the nitrogen values of the starting and final year and inserting these values into the percentage equation we already came up with for the phosphate analysis.
 
 ```{r}
 label_percent(accuracy = 0.01, scale = 1)(((89 / 115 * 100) - 100))
 ```
 
-This shows that the overall agricultural nitrogen balance in Germany between the years 1990 and 2018 declined by -22.61%. 
-
+This shows that the overall agricultural nitrogen balance in Germany between the years 1990 and 2018 declined by -22.61%.
 
 #### River eutrophication
 
-The following analysis takes a closer look at the eutrophication data for water bodies in Germany. The development is analyzed in different water quality classes (II-IV). In addition, the total eutrophication is looked at. The data are available from 1982 - 2018. The form of the data is here in percentage, from 0% to 100% eutrophication. For a first overview, the data important for this part of the analysis are collected from the entire data set. The data set provides conclusions about the summarized eutrophication of the water bodies, but also about the status of the different water quality classes. The water quality classes describe the condition of the water bodies. The water quality class one stands for waters without antropogenic pollution. The second class of the water quality classes in turn stands for a moderate pollution, the class II-III for a significant pollution, the class III for an increased pollution, the classes III-IV for a high pollution and the IV water quality class finally stands for a very high pollution. In the data used, the classes subjected to antroprogenic pollution are listed and analyzed for eutrophication. (BMU, 2016)
+The following analysis takes a closer look at the eutrophication data for water bodies in Germany. The development is analyzed in different water quality classes (II-IV). In addition, the total eutrophication is looked at. The data are available from 1982 - 2018. The form of the data is here in percentage, from 0% to 100% of sample sites exceeding the requirement for good status for total phosphate in rivers. While phosphate was used as the indicator for eutrophication in the study by the Federal Environmental Agency, the context for our data set, as well as the accompanying text on the FEA's website is to look at eutrophication. Therefore, we will refer to the content of this data set as "eutrophication" in the following text, to avoid having to write "Sampling sites which exceed the requirement for good status for total phosphorus in rivers" each time.
+
+For a first overview, the data important for this part of the analysis are collected from the entire data set. The data set provides conclusions about the summarized eutrophication of the water bodies, but also about the status of the different water quality classes. The water quality classes describe the condition of the water bodies. The water quality class one stands for waters without anthropogenic pollution. The second class of the water quality classes in turn stands for a moderate pollution, the class II-III for a significant pollution, the class III for an increased pollution, the classes III-IV for a high pollution and the IV water quality class finally stands for a very high pollution. In the data used, the classes subjected to anthropogenic pollution are listed and analyzed for eutrophication (BMU, 2016).
 
 ```{r}
 "Quality class II-III" <- c(df$`Güteklasse_II-III`)
@@ -394,7 +363,8 @@ For a first overview of the data, the function summary() is applied to the indiv
 ```{r}
 summary(`Total eutrophication`)
 ```
-By using the summary() function, the minimum and maximum of the particular eutrophication are shown. The eutrophication is indicated in the data in percent. Thus, the maximum for "Total eutrophication" is 92.00% and the minimum is 0.00%. In the following, the summary() function was applied to the different quality classes. 
+
+By using the summary() function, the minimum and maximum of the particular eutrophication are shown. The eutrophication is indicated in the data in percent. Thus, the maximum for "Total eutrophication" is 92.00% and the minimum is 0.00%. In the following, the summary() function was applied to the different quality classes.
 
 ```{r}
 summary(`Quality class II-III`)
@@ -411,10 +381,10 @@ summary(`Quality class III-IV`)
 ```{r}
 summary(`Quality class IV`)
 ```
-With this first operation, an overview of the minimums and maximums of the different classes and the total eutrophication could be obtained. It is noticeable that the minimum is always 0.00%. In order to examine the minimum and maximum in more detail, the data are converted to a table with the respective year numbers. 
+
+With this first operation, an overview of the minimums and maximums of the different classes and the total eutrophication could be obtained. It is noticeable that the minimum is always 0.00%. In order to examine the minimum and maximum in more detail, the data are converted to a table with the respective year numbers.
 
 ```{r}
-timeline_numeric <- as.numeric(df$Jahr)
 "df_Total eutrophication" <- tibble(timeline_numeric, `Total eutrophication`)
 `df_Total eutrophication` <-setNames(`df_Total eutrophication`, c("Year", "Total"))
 view(`df_Total eutrophication`)
@@ -446,9 +416,9 @@ view(`df_Quality class IV`)
 
 The newly created data sets are filtered in detail to the minimums and maximums of the respective years in order to make a more accurate statement about the data.
 
-The filter function shows that the minimum is 2030 in any case. This allows the conclusion that this is the goal of the development and that the eutrophication should have decreased to 0.00% by 2030. In order to look at this development in more detail, the individual data sets are presented graphically in the following. 
+The filter function shows that the minimum is 2030 in any case. This allows the conclusion that this is the goal of the development and that the eutrophication should have decreased to 0.00% by 2030. In order to look at this development in more detail, the individual data sets are presented graphically in the following.
 
-At this point it should be noted that the filter function did not work for all data sets as a whole. Unfortunately, no maximum values could be determined for the water quality classes II-III, III and IV. By looking at the data sets, it became apparent that the missing data were all decimal numbers. A possible source of error could be the transfer of comma and point, since our data set is in German and R works in English, the error could be there, but this is also only a guess. By different attempts again and again no results for the maximum and minimum could be obtained.  In addition, it was also tried to search for the complete number with all decimal places, but this also did not lead to the desired result, so that the results could only be displayed incompletely. 
+At this point it should be noted that the filter function did not work for all data sets as a whole. Unfortunately, no maximum values could be determined for the water quality classes II-III, III and IV. By looking at the data sets, it became apparent that the missing data were all decimal numbers. A possible source of error could be the transfer of comma and point, since our data set is in German and R works in English, the error could be there, but this is also only a guess. Despite repeated attempts again and again no results for the maximum and minimum could be obtained. In addition, it was also tried to search for the complete number with all decimal places, but this also did not lead to the desired result, so that the results could only be displayed incompletely.
 
 ```{r}
 `df_Total eutrophication`%>% 
@@ -490,7 +460,8 @@ ggplot(data = `df_Total eutrophication`, aes(x=Year, y=Total)) +
   xlab("Year") +
   ylab("Eutrophication (%)")
 ```
-The following graphs show the development of the different water quality classes in more detail and allow a conclusion to be drawn about the development and the achievement of the targets. The development in water quality class II-III indicates an increasing development of eutrophication until 2015. From 2015 the eutrophication decreases slightly, but the value is still over 50% in 2018, so the target of 0.00% eutrophication by 2030 seems far away. 
+
+The following graphs show the development of the different water quality classes in more detail and allow a conclusion to be drawn about the development and the achievement of the targets. The development in water quality class II-III indicates an increasing development of eutrophication until 2015. From 2015 the eutrophication decreases slightly, but the value is still over 50% in 2018, so the target of 0.00% eutrophication by 2030 seems far away.
 
 ```{r}
 `df_Quality class II-III` %>% 
@@ -504,6 +475,7 @@ The following graphs show the development of the different water quality classes
   xlim(1982, 2030) +
   ylim(0, 100)
 ```
+
 Water quality class III is considered in the third presentation. The development shows the highest level of eutrophication in 1993. From this time on, the trend is downward, but always with increasing outbreaks of eutrophication between the different years. In the last measured year 2018, however, the eutrophication is below five percent.
 
 ```{r}
@@ -534,7 +506,7 @@ The graph for water quality classes III-IV, on the other hand, shows a clear dow
   ylim(0, 100)
 ```
 
-The last graphic again deals explicitly with water quality class IV. The peak of the class is, as can be seen from the previous graph, before 1990, more specifically 1985. As of 1992, the eutrophication in this class no longer exceeds the five percent barrier. 
+The last graphic again deals explicitly with water quality class IV. The peak of the class is, as can be seen from the previous graph, before 1990, more specifically 1985. As of 1992, the eutrophication in this class no longer exceeds the five percent barrier.
 
 ```{r}
 `df_Quality class IV` %>% 
@@ -548,9 +520,10 @@ The last graphic again deals explicitly with water quality class IV. The peak of
   xlim(1982, 2030) +
   ylim(0, 100)
 ```
-By presenting the data in this graphs, the developments of water quality classes III, III-IV and IV can be named with a clear positive trend towards attainment of 0.00% eutrophication in 2030.
 
-The data can be used to forecast trends towards the 0.00% eutrophication target. However, it should be noted that the prediction cannot be considered complete, as there are many more factors involved in reducing eutrophication. 
+By presenting the data in these graphs, the development of water quality classes III, III-IV and IV can be named with a clear positive trend towards attainment of 0.00% eutrophication in 2030.
+
+The data can be used to forecast trends towards the 0.00% eutrophication target. However, it should be noted that the prediction cannot be considered complete, as there are many more factors involved in reducing eutrophication.
 
 Since the development of the water quality classes has already been broadly represented by the graphs. The forecast for the year 2030 refers to the summarized measurements of the water quality classes.
 
@@ -563,7 +536,9 @@ Since the development of the water quality classes has already been broadly repr
 ```{r}
 label_percent(scale = 1)(((55.7 / 86.4 * 100) - 100))
 ```
-The first calculation shows the decrease in eutrophication from 1982 - 2018. The decrease over the entire measurement period is 36%. To make a forecast for the year 2030 the years 1985 - 2000 and 2000 - 2015 are looked at in the next operations. The resulting values will be used to forecast to 2030. 
+
+The first calculation shows the decrease in eutrophication from 1982 - 2018. The decrease over the entire measurement period is 36%. To make a forecast for the year 2030 the years 1985 - 2000 and 2000 - 2015 are looked at in the next operations. The resulting values will be used to forecast to 2030.
+
 ```{r}
 `df_Total eutrophication` %>% 
   select(Year, Total) %>%
@@ -583,17 +558,17 @@ label_percent(scale = 1)(((71.2 / 86.4 * 100) - 100))
 ```{r}
 label_percent(scale = 1)(((55.7 / 71.2 * 100) - 100))
 ```
-The decrease in eutrophication was -18% from 1982 - 2000 and -22% in the following 18 years. This results in an average decrease in eutrophication of 1.1% per year for this period of 36 years.  
+
+The decrease in eutrophication was -18% from 1982 - 2000 and -22% in the following 18 years. This results in an average decrease in eutrophication of 1.1% per year for this period of 36 years.
 
 ```{r}
-"Decreas per Year" <- (40/36)
-view(`Decreas per Year`)
+"Decrease per Year" <- (40/36)
+view(`Decrease per Year`)
 ```
 
-For the next 12 years, if eutrophication continues to decrease, this would mean another 13.2% decrease. Conversely, based on these data, this would mean that in 2030 the water bodies would still be up to 46.8% eutrophicated. So the target of 0.00% would have been missed.
+For the next 12 years, if eutrophication continues to decrease, this would mean another 13.2% decrease. Conversely, based on these data, this would mean that in 2030 the water bodies would still be up to 46.8% eutrophicated. So, the target of 0.00% would have been missed.
 
-The total eutrophication data were calculated by changing the percentages, i.e. the respective increase or decrease in eutrophication.On the one hand the increase and decrease between the years in percent and on the other hand the total change from 1982 - 2018 were considered. Both diagrams should visualize the change again and make it more clearly visible. 
-
+The total eutrophication data were calculated by changing the percentages, i.e. the respective increase or decrease in eutrophication. On the one hand the increase and decrease between the years in percent and on the other hand the total change from 1982 - 2018 were considered. Both diagrams should visualize the change again and make it more clearly visible.
 
 ```{r}
 eutrophication_perc_change <- `df_Total eutrophication` %>%
@@ -602,7 +577,6 @@ eutrophication_perc_change <- `df_Total eutrophication` %>%
 eutrophication_perc_change <- drop_na(eutrophication_perc_change) 
 View(eutrophication_perc_change)
 ```
-
 
 ```{r}
 grid.arrange(ggplot(eutrophication_perc_change, aes(x=Year, y=Perc_change, fill=factor(ifelse(Perc_change <0, "positive", "negative")))) +
@@ -620,7 +594,7 @@ grid.arrange(ggplot(eutrophication_perc_change, aes(x=Year, y=Perc_change, fill=
                theme_minimal() +
                scale_fill_manual(guide = FALSE, name = "Type of change", values=c("goldenrod1","darkslateblue")) +
                xlim(1982, 2020) +
-               ylim(-10, 10) + 
+               ylim(-10, 5) + 
                labs(x = "Time (years)", 
                     y = "Change (in %)", 
                     title = "Total change"), nrow = 1, top = "Increase and decline of eutrophication in rivers of Germany 1982-2018")
@@ -628,24 +602,29 @@ grid.arrange(ggplot(eutrophication_perc_change, aes(x=Year, y=Perc_change, fill=
 
 ### **Step 2: The Comparison**
 
-Since all three datasets come with observations in different types of measurements and format, we decided to compare all three of them regarding their percentage change over the years, to bring them all on the same scale. For that we first created a new table which contained the percentage change columns of phosphate, nitrogen and eutrophication.
+Since all three data sets come with observations in different types of measurements and format, we decided to compare all three of them regarding their percentage change over the years, to bring them all on the same scale. For that we first created a new table which contained the percentage change columns of phosphate, nitrogen and eutrophication.
+
 ```{r}
 df_perc_change <- left_join(phos_perc_change, nitr_perc_change, by = "Year")
 df_perc_change <- left_join(df_perc_change, eutrophication_perc_change, by = "Year")
 ```
+
 We then plotted a line graph which showed all three variables together:
+
 ```{r}
 ggplot() + geom_line(aes(x = Year, y = Perc_change.x), size = 0.8, color = "mediumaquamarine", data = df_perc_change) + 
   geom_line(aes(x = Year, y = Perc_change.y), size = 0.8, color = "coral", data = df_perc_change) +
-  geom_line(aes(x = Year, y = Perc_change), size = 0.8, color = "blueviolet", data = df_perc_change) +
-  labs(title = "Percentage change 2000-2019", subtitle = "green = phosphate, orange = nitrogen, purple = eutrophication", x = "Year", y = "Percantage change") +
+  geom_line(aes(x = Year, y = Perc_change), size = 0.8, color = "darkslateblue", data = df_perc_change) +
+  labs(title = "Percentage change 2000-2019", subtitle = "green = phosphate, orange = nitrogen, blue = eutrophication", x = "Year", y = "Percentage change") +
   scale_y_continuous(labels = scales::percent) +
   scale_x_continuous(breaks=seq(2001,2019,2)) +
   theme_minimal()
 ```
-The comparative line graph illustrates that phosphate consumption went through the biggest changes over the period from 2000-2019, while changes in nitrogen balance change a bit less, but often seem to mimic the changes in phosphate use with a 1-2 year time delay. Meanwhile, eutrophication only fluctuates moderately in comparison. This makes sense, since ecosystems such as the river sites where probes for the eutrophication value were observed, take longer to react to environmental changes such as the annual ups and downs of fertilizer use.
 
-Trying to depict the differences in value change of phosphate, nitrogen and eutrophication as a bar chart however, proved to be a little more complicated. The data had to be transformed into a table which the ggplot geom_col function could use to make a plot the way we wanted it to look. And while there might have been in easier way to get said data frame, this is the way we figured out to do it.
+The comparative line graph illustrates that phosphate consumption went through the biggest changes over the period from 2000-2019, while changes in nitrogen balance change a bit less, but often seem to mimic the changes in phosphate use with a 1- to 2-year time delay. Meanwhile, eutrophication only fluctuates moderately in comparison. This makes sense, since ecosystems such as the river sites where probes for the eutrophication value were observed, take longer to react to environmental changes such as the annual ups and downs of fertilizer use.
+
+Trying to depict the differences in value change of phosphate, nitrogen, and eutrophication as a bar chart however, proved to be a little more complicated. The data had to be transformed into a table which the ggplot geom_col function could use to make a plot the way we wanted it to look. And while there might have been in easier way to get said data frame, this is the way we figured out to do it.
+
 ```{r}
 comb1 <- data.frame(group = c("Phosphate", "Nitrogen", "Eutrophication"),
                  Y2001 = c(df_perc_change$Perc_change.x[1],df_perc_change$Perc_change.y[1],df_perc_change$Perc_change[1]),
@@ -670,40 +649,40 @@ comb1 <- data.frame(group = c("Phosphate", "Nitrogen", "Eutrophication"),
 
 comb2 <- comb1 %>% gather(key = Year, value = Value, Y2001:Y2019)
 ```
+
 After finally figuring out what the data frame needed to look like and how to transform it into the right arrangement of values, the plotting itself was easy.
+
 ```{r}
 ggplot(comb2, aes(Year, Value, fill = group)) + 
   geom_col(position = "dodge") +
   theme_minimal(base_size = 12) +
   theme(axis.text.x=element_text(angle=90,hjust=1)) +
   scale_y_continuous(labels = scales::percent) +
-  scale_fill_manual("Type", values = c("Phosphate" = "mediumaquamarine", "Nitrogen" = "coral", "Eutrophication" = "blueviolet")) +
+  scale_fill_manual("Type", values = c("Phosphate" = "mediumaquamarine", "Nitrogen" = "coral", "Eutrophication" = "darkslateblue")) +
   labs(x = "Time (years)", 
        y = "Change (in percent)", 
        title = "Percentage change")
 ```
-Again it can be seen that phosphate consumption fluctuated the most, while the nitrogen balance had the most dramatic changes between the years 2008 and 2015 and eutrophication goes back and forth ever so slightly with an increasing decrease over the last three years.
 
+Again, it can be seen that phosphate consumption fluctuated the most, while the nitrogen balance had the most dramatic changes between the years 2008 and 2015 and eutrophication goes back and forth ever so slightly with a rising decrease totalled over the last three years.
 
 ## **Discussion**
 
-The data shows a trend of reduction of phosphate and nitrogen inputs into the ecosystem of water bodies. This in turn has a positive effect on the eutrophication in water bodies and their condition. With the exclusive consideration of these data the analysis comes to the conclusion that a decrease until 2030 of the phosphate values up to 0.0 % is possible. For nitrogen inputs, a reduction of 37.5% is possible according to the current approach. However, it was already mentioned at the beginning of the work that not only agriculture is involved in the input of nitrogen and phosphate, but also other carriers such as industry and municipal wastewater treatment plants. In recent years, the latter have significantly reduced their nutrient inputs to water bodies, whereas agriculture has remained relatively constant. (Taube et al. 2020. P. 7f.) The improvement in water quality could therefore also be attributed to the reduction in municipal wastewater treatment plants and less to the measures in agriculture. 
-Reduction in agriculture is an acute problem. In order to protect ecosystems and not violate the EU nitrogen Directive. The European Union has already reminded Germany several times to implement the nitrogen Directive and reduce the input from agriculture (European Commission. 2019). 
+The data shows a trend of reduction of phosphate and nitrogen inputs into the ecosystem of water bodies. This in turn has a positive effect on the eutrophication in water bodies and their condition. However, it was already mentioned at the beginning of the work that not only agriculture is involved in the input of nitrogen and phosphate, but also other carriers such as industry and municipal wastewater treatment plants. In recent years, the latter have significantly reduced their nutrient inputs to water bodies, whereas agriculture has remained relatively constant (Taube et al. 2020. p. 7f.). The improvement in water quality could therefore also be attributed to the reduction in municipal wastewater treatment plants and less to the measures in agriculture. Reduction in agriculture is an acute problem. In order to protect ecosystems and not violate the EU nitrogen Directive. The European Union has already reminded Germany several times to implement the nitrogen Directive and reduce the input from agriculture (European Commission. 2019).
 
-The directive is a further motivation to get the limitation of fertilization under control the eutrophication in Germany is a major problem and must be effectively pursued by the federal government in the coming years. According to the considered data, the values for nitrogen and phosphate input are decreasing, however, the level of eutrophication in the water bodies and the target of 0.0% eutrophication by 2030 cannot be reached. By 2030, relying on the data of water bodies eutrophication and observing the previous reduction, the water bodies can be cleared of 53.2% eutrophication. 
+The directive is a further motivation to get the limitation of fertilization under control the eutrophication in Germany is a major problem and must be effectively pursued by the federal government in the coming years. According to the considered data, the values for nitrogen and phosphate input are decreasing, however, the level of eutrophication in the water bodies and the target of 0.0% eutrophication by 2030 cannot be reached. By 2030, relying on the data of water bodies eutrophication and observing the previous reduction, the water bodies can be cleared of 53.2% eutrophication.
 
-Agriculture is the main sector responsible for the input of substances and the resulting eutrophication (Umweltbundesamt, 2017: p. 70). Therefore, the greatest measures to limit the input of phosphate and nitrogen are to be taken in agriculture. The dense livestock farming in Germany contributes to a large extent to the overfertilization and eventual eutrophication of land and water systems. In addition, the settlement of species atypical to the location leads to a necessary fertilization, which in turn results in a high nutrient input into the aquatic and terrestrial ecosystems. In the coming years, animal husbandry and fertilization regulations must therefore be adapted to protect land and water systems. (NABU, n.d. p. 2) Eutrophication is one of the problems caused by the introduction of phosphate and nitrogen in these quantities. Degradation of drinking water quality is another. Acting in this area is consequently essential.
+Agriculture is the main sector responsible for the input of substances and the resulting eutrophication (Umweltbundesamt, 2017: p. 70). Therefore, the greatest measures to limit the input of phosphate and nitrogen are to be taken in agriculture. The dense livestock farming in Germany contributes to a large extent to the overfertilization and eventual eutrophication of land and water systems. In addition, the settlement of species atypical to the location leads to a necessary fertilization, which in turn results in a high nutrient input into the aquatic and terrestrial ecosystems. In the coming years, animal husbandry and fertilization regulations must therefore be adapted to protect land and water systems (NABU, n.d. p. 2). Eutrophication is one of the problems caused by the introduction of phosphate and nitrogen in these quantities. Degradation of drinking water quality is another. Acting in this area is consequently essential.
 
 ## **Limitations**
 
-Since only working with already collected data and a dataset which is limited to the annual overall use of phosphate and nitrogen in agriculture over a period of time, as well as a set of measurements on eutrophication in river ecosystems, this report can make no claim on providing a complete analysis of the topic and other factors which were not accounted for in our datasets may be at play. 
+Since only working with already collected data and a data set which is limited to the annual overall use of phosphate and nitrogen in agriculture over a period of time, as well as a set of measurements on eutrophication in river ecosystems, this report can make no claim on providing a complete analysis of the topic and other factors which were not accounted for in our data sets may be at play. 
 
 ------------------------------------------------------------------------
 
 ## **Sources**
 
-
-BMU 2016. chemical water quality classes. Retrieved December 21, 2020, from https://www.bmu.de/themen/wasser-abfall-boden/binnengewaesser/fluesse-und-seen/schutzziele-und-bewertungsparameter/chemische-gewaessergueteklassifizierung/
+BMU 2016. chemical water quality classes. Retrieved December 21, 2020, from <https://www.bmu.de/themen/wasser-abfall-boden/binnengewaesser/fluesse-und-seen/schutzziele-und-bewertungsparameter/chemische-gewaessergueteklassifizierung/>
 
 Eurostat. O. J. Who we are. Retrieved December 13, 2020, from <https://ec.europa.eu/eurostat/web/main/about/who-we-are.>
 
@@ -715,6 +694,6 @@ J. Arle, H. Bartel, C. Baumgarten, A. Bertram, K. Blondzik, S. Brandt, F. Brauer
 
 Umweltbundesamt. 2020. eutrophication. Retrieved December 13, 2020, from <https://www.umweltbundesamt.de/themen/wasser/gewaesser/meere/nutzung-belastungen/eutrophierung#eutrophierung-was-bedeutet-das>
 
-Umweltbundesamt. 2018. who we are. Retrieved December 12, 2020, from <https://www.umweltbundesamt.de/das-uba/wer-wir-sind.>  
+Umweltbundesamt. 2018. who we are. Retrieved December 12, 2020, from <https://www.umweltbundesamt.de/das-uba/wer-wir-sind.>
 
-C., Tölle-Nolting. 2019. demands for the adaptation of the fertilizer ordinance. Berlin: Naturschutzbund Deutschland (NABU) e. V. 
+C., Tölle-Nolting. 2019. demands for the adaptation of the fertilizer ordinance. Berlin: Naturschutzbund Deutschland (NABU) e. V.
