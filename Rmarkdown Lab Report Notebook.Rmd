@@ -1,6 +1,6 @@
 ---
 title: "RMakrdown Report: River Eutrophication"
-author: Lina Hohlbein [3037090], Mira Kracke, Lukas Zimmermann [3036712]
+author: Lina Hohlbein [3037090], Mira Kracke [3033757], Lukas Zimmermann [3036712]
 date: December 23, 2020
 output:
   rmarkdown::html_document:
