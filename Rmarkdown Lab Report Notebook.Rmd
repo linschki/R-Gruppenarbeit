@@ -623,21 +623,24 @@ grid.arrange(ggplot(eutrophication_perc_change, aes(x=Year, y=Perc_change, fill=
 
 ### **Step 2: The Comparison**
 
+Since all three datasets come with observations in different types of measurements and format, we decided to compare all three of them regarding their percentage change over the years, to bring them all on the same scale. For that we first created a new table which contained the percentage change columns of phosphate, nitrogen and eutrophication.
 ```{r}
 df_perc_change <- left_join(phos_perc_change, nitr_perc_change, by = "Year")
 df_perc_change <- left_join(df_perc_change, eutrophication_perc_change, by = "Year")
 ```
-
+We then plotted a line graph which showed all three variables together:
 ```{r}
 ggplot() + geom_line(aes(x = Year, y = Perc_change.x), size = 0.8, color = "mediumaquamarine", data = df_perc_change) + 
   geom_line(aes(x = Year, y = Perc_change.y), size = 0.8, color = "coral", data = df_perc_change) +
   geom_line(aes(x = Year, y = Perc_change), size = 0.8, color = "blueviolet", data = df_perc_change) +
-  labs(title = "Percentage change 2001-2019", subtitle = "green = phosphate, orange = nitrogen, purple = eutrophication", x = "Year", y = "Percantage change") +
+  labs(title = "Percentage change 2000-2019", subtitle = "green = phosphate, orange = nitrogen, purple = eutrophication", x = "Year", y = "Percantage change") +
   scale_y_continuous(labels = scales::percent) +
   scale_x_continuous(breaks=seq(2001,2019,2)) +
   theme_minimal()
 ```
+The comparative line graph illustrates that phosphate consumption went through the biggest changes over the period from 2000-2019, while changes in nitrogen balance change a bit less, but often seem to mimic the changes in phosphate use with a 1-2 year time delay. Meanwhile, eutrophication only fluctuates moderately in comparison. This makes sense, since ecosystems such as the river sites where probes for the eutrophication value were observed, take longer to react to environmental changes such as the annual ups and downs of fertilizer use.
 
+Trying to depict the differences in value change of phosphate, nitrogen and eutrophication as a bar chart however, proved to be a little more complicated. The data had to be transformed into a table which the ggplot geom_col function could use to make a plot the way we wanted it to look. And while there might have been in easier way to get said data frame, this is the way we figured out to do it.
 ```{r}
 comb1 <- data.frame(group = c("Phosphate", "Nitrogen", "Eutrophication"),
                  Y2001 = c(df_perc_change$Perc_change.x[1],df_perc_change$Perc_change.y[1],df_perc_change$Perc_change[1]),
@@ -662,7 +665,7 @@ comb1 <- data.frame(group = c("Phosphate", "Nitrogen", "Eutrophication"),
 
 comb2 <- comb1 %>% gather(key = Year, value = Value, Y2001:Y2019)
 ```
-
+After finally figuring out what the data frame needed to look like and how to transform it into the right arrangement of values, the plotting itself was easy.
 ```{r}
 ggplot(comb2, aes(Year, Value, fill = group)) + 
   geom_col(position = "dodge") +
@@ -674,6 +677,8 @@ ggplot(comb2, aes(Year, Value, fill = group)) +
        y = "Change (in percent)", 
        title = "Percentage change")
 ```
+Again it can be seen that phosphate consumption fluctuated the most, while the nitrogen balance had the most dramatic changes between the years 2008 and 2015 and eutrophication goes back and forth ever so slightly with an increasing decrease over the last three years.
+
 
 ## **Discussion**
 
