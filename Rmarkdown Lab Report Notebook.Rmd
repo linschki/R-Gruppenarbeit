@@ -691,7 +691,7 @@ Agriculture is the main sector responsible for the input of substances and the r
 
 ## **Limitations**
 
-Since only working with already collected data and a dataset which is limited to the annual overall use of phosphate and nitrogen in agriculture over a period of time, as well as a set of measurements on eutrophication in river ecosystems, this report can make no claim on providing a complete analysis of the topic. Furthermore, even where correlations between the different datasets can be observed, this does not imply causation, since other factors which were not accounted for in our datasets may be at play. 
+Since only working with already collected data and a dataset which is limited to the annual overall use of phosphate and nitrogen in agriculture over a period of time, as well as a set of measurements on eutrophication in river ecosystems, this report can make no claim on providing a complete analysis of the topic and other factors which were not accounted for in our datasets may be at play. 
 
 ------------------------------------------------------------------------
 
